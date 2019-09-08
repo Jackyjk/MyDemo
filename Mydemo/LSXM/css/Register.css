@@ -1,0 +1,102 @@
+body {
+	background: url(../img/zhuce.jpg) no-repeat;
+	background-size: cover;
+	/*position: absolute;*/
+}
+
+label {
+	font-family: "microsoft yahei";
+	font-size: 20px;
+}
+
+label.style-label {
+	font-family: "microsoft yahei";
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.Regis-h1 {
+	padding-top: 50px;
+	margin-left: 580px;
+	/*text-align: center;*/
+	color: aqua;
+	/* 设置字体阴影*/
+	text-shadow: saddlebrown 5px 5px 10px;
+	/* 设置字体样式 */
+	font-family: serif;
+	font-size: 30px;
+}
+
+
+/*div.zhuce-left {
+	margin-top: 80px;
+	margin-left: 400px;
+	position: absolute;
+	box-sizing: border-box;
+	width: 400px;
+	height: 100%;
+	/*background: #4d5e70 bottom;
+}
+
+/*div.zhuce-right {
+	margin-top: -250px;
+	margin-left: 400px;
+	position: absolute;
+	box-sizing: border-box;
+	width: 400px;
+	height: 100%;
+}*/
+
+select.zhuce-seclect-style {
+	/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+	border: solid 1px #000000;
+	border-radius: 5px;
+	/*很关键：将默认的select选择框样式清除*/
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	/*在选择框的最右侧中间显示小箭头图片*/
+	background: url("https://raw.githubusercontent.com/ourjs/static/gh-pages/2015/arrow.png") no-repeat scroll right center transparent;
+	/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+	padding-right: 15px;
+}
+
+div.myRegister-css {
+	margin-left: 55px;
+	margin-top: -15px;
+}
+
+.default {
+	background: #eeeeee;
+}
+
+.weak {
+	background: #FF0000;
+}
+
+.medium {
+	background: #FF9900;
+}
+
+.strong {
+	background: #33CC00;
+}
+
+span {
+	display: inline-block;
+	width: 50px;
+	height: 10px;
+	line-height: 10px;
+	background: #ddd;
+	text-align: center;
+	margin: 0px 2px;
+}
+span.must{
+	color: red;
+	width: 10px;
+	height: 1px;
+}
+span.other{
+	width: 10px;
+	height: 1px;
+}

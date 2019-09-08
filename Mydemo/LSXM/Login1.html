@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<headlang="en">
+		<title>欢迎来到506登陆系统</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/MyselfCss.css" />
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/check.js"></script>
+		
+		</head>
+
+		<body>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 col-sm-7" style="margin-top: 18rem;">
+						<p class="p_css">一段文字</p>
+					</div>
+					<div class="col-xs-6 col-sm-4" style="margin-top: 18rem;">
+						<form class="  form form-horizontal" action="#" method="post" id="login_form" name="login_form">
+							<h2 class="text-center">5 0 6 用 户 登 录</h2>
+							<div class="form-group">
+								<label for="account" class="col-sm-2 control-label ">账&nbsp;号</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="account" name="account" placeholder="  请输入账号">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password" class="col-sm-2 control-label">密&nbsp;码</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" id="password" name="password" placeholder="  请输入密码"
+										maxlength="13">
+								</div>
+							</div>
+							<button type="button" class="btn btn-primary center-block"  onclick="check();login()"> 登录测试</button>
+							<div class="text-right small">
+								<a href="Regis.html" style="font-family: 'microsoft sans serif'">没有账号？</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			</div>
+		</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+	background: url(../img/Login.jpg) no-repeat;
+	background-size: cover;
+	font-size: 16px;
+}
+
+.form {
+	background: rgba(255, 255, 255, 0.4);
+	padding: 10px;
+	padding-left: 6rem;
+	padding-right: 50px;
+}
+
+h2 {
+	/*设置字体颜色*/
+	color: aqua;
+	/* 设置字体阴影*/
+	text-shadow: saddlebrown 5px 5px 10px;
+	text-align: center;
+	/* 设置字体样式 */
+	font-family: impact;
+	font-size: 30px;
+}
+p.p_css{
+	font-family: "微软雅黑";
+	font-size: 20px;
+	font-weight: bold;
+	color: darkblue;
+	
+}

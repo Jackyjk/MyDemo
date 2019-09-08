@@ -1,0 +1,119 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-08 14:41:26
+ * @LastEditTime: 2019-09-08 14:42:58
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>506注册系统</title>
+	<link rel="stylesheet" href="css/Register.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/PasswordLevel.js"></script>
+	<script type="text/javascript" src="js/check.js"></script>
+
+	<head>
+
+		<body>
+			<h1 class="Regis-h1"><strong>欢迎来到506注册界面</strong></h1>
+			<form class="form-inline " action="#" method="post" name="RegisterForm" style="margin-left: 50rem; margin-top: 3rem;width:500px;height:550px;background: rgba(255, 255, 255, 0.4);padding: 40px;">
+				<div class="myRegister-css">
+					<div class="form-group">
+						<label for="account"><span class="must">*</span>账   &nbsp;号 : &nbsp; &nbsp;</label>
+						<input type="text" class="form-control" id="account" placeholder="" name="account" required="required">
+					</div>
+
+					<div class="form-group">
+						<label for="name"><span class="must">*</span>用 户 名 :&nbsp;</label>
+						<input type="text" class="form-control" id="name" placeholder="" name="name" required="required">
+					</div>
+
+					<div class="form-group">
+						<label for="password"><span class="must">*</span>密  &nbsp;码 :&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="  请输入6-13位密码" maxlength="13" required="required">
+						<p>密 码 强 度：&nbsp;&nbsp;&nbsp;<span>弱</span><span>中</span><span>强</span></p>
+					</div>
+					<div class="form-group">
+						<label for="password"><span class="must">*</span>确认密码 :</label>
+						<input type="password" class="form-control" id="again_password" name="again_password" required="required" maxlength="13">
+					</div>
+
+					<div>
+						<label> <span class="must">*</span>专 业： &nbsp; &nbsp;</label>
+						<select class="zhuce-seclect-style" id="major" name="major">
+							<option value="170602" selected="selected">软件工程</option>
+							<option value="170601">计算机科学与技术</option>
+							<option value="170605">网络工程</option>
+							<option value="170604">探测制导</option>
+							<option value="170603">信息对抗</option>
+							<option value="170606">物联网</option>
+						</select>
+					</div>
+					<div>
+						<label><span class="must">*</span> 学 历： &nbsp; &nbsp;</label>
+						<select class="zhuce-seclect-style" id="education" name="education">
+							<option value="B" selected="selected">本科</option>
+							<option value="M">研究生</option>
+							<option value="D">博士</option>
+							<option value="PD">博士后</option>
+						</select>
+					</div>
+					<div class="radio">
+						<label style="font-weight:bold;"><span class="must">*</span> 性 别：&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="radio-inline">
+  						<input type="radio" name="sex" id="sex1" value="M" checked="checked" > 男&nbsp;&nbsp;
+					</label>
+						<label class="radio-inline">
+  						<input type="radio" name="sex" id="sex2" value="W" > 女
+					</label>
+					</div>
+					<div class="radio">
+						<label style="font-weight:bold;"><span class="must">*</span> 是否在校:&nbsp;</label>
+						<label class="radio-inline">
+  						<input type="radio" name="status" id="status1" value="AT" checked="checked"> 在校&nbsp;&nbsp;
+					</label>
+						<label class="radio-inline">
+  						<input type="radio" name="status" id="status2" value="LEAVE"> 离校
+					</label>
+					</div>
+					<!--
+                    <div class="form-group">
+						<label for="code_language">编程语言:</label>
+						<input type="text" class="form-control" id="code_language" placeholder="  使用空格隔开" name="code_language" required="required">
+					</div>
+                    -->
+					<div class="form-group">
+						<label for="email"><span class="other"></span>电子邮件:</label>
+						<input type="email" class="form-control" id="email" placeholder="" name="email">
+					</div>
+
+					<div class="form-group">
+						<label for="phone"><span class="other"></span>手机号码:</label>
+						<input type="tel" class="form-control" name="phone" id="phone" maxlength="11">
+					</div>
+
+					<div class="form-group">
+						<label for="phone"><span class="other"></span>银行账号:</label>
+						<input type="text" class="form-control" name="bankNumber" id="bankNumber" maxlength="19">
+					</div>
+
+				</div>
+				<span hidden="true"></span>
+				<br />
+				<div style="font-family: 'microsoft sans serif';margin-left: 25rem;">
+					已有账号？点击
+					<a href="index.html">登录</a>
+				</div>
+				<button class="btn btn-danger" onclick="register();CheckPasswordAndPhone();" style="width:150px;margin-top:2rem;margin-left:12rem;">注册</button><br /><br /><br />
+
+			</form>
+		</body>
+	</head>
+
+</html>
