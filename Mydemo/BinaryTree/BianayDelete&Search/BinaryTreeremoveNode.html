@@ -1,0 +1,114 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: Mr.J
+ * @Date: 2019-09-08 09:34:54
+ * @LastEditTime: 2019-09-08 10:13:29
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function BinaryTree() {
+            //创建一个节点
+            var Node = function (key) {
+                //键值
+                this.key = key;
+                //左右孩子
+                this.left = null;
+                this.right = null;
+            };
+            //创建一个根节点
+            var root = null;
+
+            var insertNode = function (node, newNode) {
+                //新节点小于老节点的值，插在左边
+                if (newNode.key < node.key) {
+                    if (node.left === null) {
+                        //如果是空，直接插入
+                        node.left = newNode;
+                    } else {
+                        //不为空，向其左孩子的新节点插入
+                        insertNode(node.left, newNode);
+                    }
+                } else {
+                    //与左孩子插入逻辑相同
+                    if (node.right === null) {
+                        node.right = newNode;
+                    } else {
+                        insertNode(node.right, newNode);
+                    }
+                }
+            }
+            //创建一个函数用来插入节点
+            this.insert = function (key) {
+                var newNode = new Node(key); //创建节点对象
+                if (root === null) {
+                    root = newNode; //创建根节点
+                } else {
+                    insertNode(root, newNode); //插入节点
+                }
+            };
+            //后序遍历代码实现
+            var postOrderTraverseNode = function (node, callback) {
+                if (node !== null) {
+                    postOrderTraverseNode(node.left, callback); //左节点    
+                    postOrderTraverseNode(node.right, callback); //右节点
+                    callback(node.key); //根节点
+                }
+            }
+            this.postOrderTraverse = function (callback) {
+                //回调函数
+                postOrderTraverseNode(root, callback);
+            }
+
+            //删除节点
+            var removeNode = function (node, key) {
+                //空树
+                if (node === null) {
+                    return null;
+                }
+                if (key < node.key) {
+                    //左子树进行搜索查找
+                    node.left = removeNode(node.left, key);
+                    return node;
+                } else if (key > node.key) {
+                    //右子树进行搜索查找
+                    node.right = removeNode(node.right, key);
+                    return node;
+                } else {
+                    //未找到
+                    if (node.left === null && node.right === null) {
+                        node = null;
+                        return node;
+                    }
+                }
+            }
+            this.remove = function (key) {
+                root = removeNode(root, key);
+            }
+        }
+
+        var nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+        var binaryTree = new BinaryTree();
+        nodes.forEach(function (key) {
+            binaryTree.insert(key);
+        });
+        //遍历整个二叉树
+        var callback = function (key) {
+            console.log(key);
+        }
+        binaryTree.remove(1);
+        binaryTree.postOrderTraverse(callback);         //后序遍历进行输出查看
+    </script>
+</body>
+
+</html>
