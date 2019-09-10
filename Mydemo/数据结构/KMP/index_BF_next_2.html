@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BF_next</title>
+</head>
+<script>
+    function get_next_2(str2, next) { //计算next函数值改进算法
+        var j = 1,
+            k = 0;
+        next[1] = 0;
+        while (j < str2.length) { //长度
+            if (k == 0 || str2[j] == str2[k]) {
+                j++;
+                k++;
+                if (str2[j] == str2[k])
+                    next[j] = next[k];
+                else
+                    next[j] = k;
+            } else {
+                k = next[k]; //模式串向右移动
+            }
+        }
+
+        console.log("-----next[]-------");
+        for (j = 1; j <= str2.length; j++)
+            //计算的next值
+            console.log("next[" + j + "]" + ":" + next[j] + "  ");
+
+        // if (j > str2.length) //匹配成功
+        //     return i - str2.length;
+        // else
+        //     return 0;
+    }
+
+    function index_KMP(str1, str2, next) {
+        var i = 0,
+            j = 0,
+            sum = 0;
+        while (i < str1.length && j < str2.length) {
+            sum++;
+            if (str1[i] == str2[j]) { //如果相等，比较下一个字符
+                i++;
+                j++;
+            } else {
+                j = next[j]; // 模式串向右移动
+            }
+        }
+        console.log("一共比较了" + sum + "次");
+        if (j > str2.length) {
+            return i - str2.length + 1;
+            // console.log(i - str2.length + 1);    
+        } else
+            return 0;
+    }
+    // var str1 = 'abaabaabeca';
+    var str1 = 'abaabaabeca';
+    var str1_Arr = str1.split("");
+    console.log("第一个字符串的长度：" + str1_Arr.length);
+    // console.log(str1_Arr);
+
+    // var str2 = 'abaabe';
+    var str2 = 'abaabe';
+    var str2_Arr = str2.split("");
+    console.log("第二个字符串的长度：" + str2_Arr.length);
+    // console.log(str2_Arr);
+
+    var next = new Array();
+    // Index_BF(str1_Arr, str2_Arr);
+
+    get_next_2(str2_Arr, next);
+    index_KMP(str1, str2, next);
+</script>
+
+<body>
+
+</body>
+
+</html>

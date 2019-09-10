@@ -1,10 +1,3 @@
-<!--
- * @Description: In User Settings Edit
- * @Author: Mr.J
- * @Date: 2019-09-09 12:52:39
- * @LastEditTime: 2019-09-09 13:28:01
- * @LastEditors: Please set LastEditors
- -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +12,8 @@
         //求str2在主串str1中第num个字符之后的第一次出现的位置
         //str2非空，1<= num <= str1[0]存放str1的长度
         var i = 0,
-            j = 0;
-        sum = 0;
+            j = 0,
+            sum = 0;
         while (i < str1.length && j < str2.length) {
             sum++;
             if (str1[i] == str2[j]) { //如果相等，比较下一个字符
@@ -36,7 +29,7 @@
         console.log("经历了 " + (i - j + 1) + "次，匹配成功");
         if (j > str2.length) {
             return i - str2.length + 1;
-            console.log(i - str2.length + 1);
+            // console.log(i - str2.length + 1);
         } else
             return 0;
     }
@@ -50,7 +43,7 @@
 
         while (j < str2.length) { //长度
             if (k == 0 || str2[j] == str2[k]) {
-                next[++j]=++k;
+                next[++j] = ++k;
             } else {
                 k = next[k]; //模式串向右移动
             }
@@ -58,13 +51,30 @@
 
         console.log("-----next[]-------");
         for (j = 1; j <= str2.length; j++)
-        //计算的next值
+            //计算的next值
             console.log("next[" + j + "]" + ":" + next[j] + "  ");
+    }
 
-        // if (j > str2.length) //匹配成功
-        //     return i - str2.length;
-        // else
-        //     return 0;
+
+    function index_KMP(str1, str2, next) {
+        var i = 0,
+            j = 0,
+            sum = 0;
+        while (i < str1.length && j < str2.length) {
+            sum++;
+            if (str1[i] == str2[j]) { //如果相等，比较下一个字符
+                i++;
+                j++;
+            } else {
+                j = next[j]; // 模式串向右移动
+            }
+        }
+        console.log("一共比较了" + sum + "次");
+        if (j > str2.length) {
+            return i - str2.length + 1;
+            // console.log(i - str2.length + 1);
+        } else
+            return 0;
     }
 
     var str1 = 'abaabaabeca';
@@ -81,6 +91,7 @@
     // Index_BF(str1_Arr, str2_Arr);
 
     get_next(str2_Arr, next);
+    index_KMP(str1, str2, next);
 </script>
 
 <body>
