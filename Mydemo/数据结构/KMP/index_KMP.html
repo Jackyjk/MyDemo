@@ -8,41 +8,59 @@
     <title>BF_next</title>
 </head>
 <script>
-
-
     // 函数中 j 的指向问题暂未解决，存在bug
 
 
-    function Index_BF(str1, str2,pos) {
+    function Index_BF(str1, str2) {
         //求str2在主串str1中第num个字符之后的第一次出现的位置
         //str2非空，1<= num <= str1[0]存放str1的长度
-        var i = pos,
-            j = 1,
+        var i = 0,
+            j = 0,
             sum = 0;
-        while (i <= str1.length && j <= str2.length) {
+        var num = 0;
+        while ((i <= str1.length && j <= str2.length) && (num != str2.length)) { //当相同字符个数等于第二个字符串长度跳出循环
             sum++;
             if (str1[i] == str2[j]) { //如果相等，比较下一个字符
                 i++;
                 j++;
+                num++;
             } else {
-                i = i - j + 2; //回退上一轮开始比较的下一个字符
-                j = 1; //j回退到第一个字符
+                i = i - j + 1; //回退上一轮开始比较的下一个字符
+                j = 0; //j回退到第一个字符
+                num = 0;
             }
         }
-        console.log("一共比较了" + sum + "次");
         // console.log("i = " + i + ",j = " + j);
         // console.log("经历了 " + (i - j + 1) + "次，匹配成功");
-        if (j > str2.length) {
-            return i - str2.length;
-            // console.log(i - str2.length + 1);
-        } else
-            return 0;
+        if (num == str2.length) {
+            console.log("主串和子串在第" + (i - str2.length + 1) + "个字符处首次匹配");
+        }
+        console.log("一共比较了" + sum + "次");
+    }
+
+
+    function get_next(str2, next) {
+        var j = 0,
+            k = 0;
+        next[0] = 0;
+        while (j < str2.length) { //长度
+            if (k == 0 || str2[j] == str2[k]) {
+                next[++j] = ++k;
+            } else {
+                k = next[k]; //模式串向右移动
+            }
+        }
+        console.log("-----next[]-------");
+        // console.log(str2.length);
+        for (j = 0; j < str2.length; j++)
+            //计算的next值
+            console.log("next[" + j + "]" + ":" + next[j] + "  ");
     }
 
     function get_next_2(str2, next) { //计算next函数值改进算法
-        var j = 1,
+        var j = 0,
             k = 0;
-        next[1] = 0;
+        next[0] = 0;
         while (j < str2.length) { //长度
             if (k == 0 || str2[j] == str2[k]) {
                 j++;
@@ -55,42 +73,19 @@
                 k = next[k]; //模式串向右移动
             }
         }
-
         console.log("-----next[]-------");
-        for (j = 1; j <= str2.length; j++)
+        for (var i = 0; i < str2.length; i++)
             //计算的next值
-            console.log("next[" + j + "]" + ":" + next[j] + "  ");
+            console.log("next[" + i + "]" + ":" + next[i] + "  ");
     }
 
-
-    function get_next(str2, next) {
-        var j = 1,
-            k = 0;
-        next[1] = 0;
-
-        while (j < str2.length) { //长度
-            if (k == 0 || str2[j] == str2[k]) {
-                next[++j]=++k;
-            } else {
-                k = next[k]; //模式串向右移动
-            }
-        }
-
-        console.log("-----next[]-------");
-        // console.log(str2.length);
-        for (j = 1; j <= str2.length; j++)
-        //计算的next值
-            console.log("next[" + j + "]" + ":" + next[j] + "  ");
-    }
-
-
-    function index_KMP(str1, str2, pos, next) {
-        var i = pos,
-            j = 1,
+    function index_KMP(str1, str2, next) {
+        var i = 0,
+            j = 0,
             sum = 0;
         while (i <= str1.length && j <= str2.length) {
             sum++;
-            if (j==0 || str1[i] == str2[j]) { //如果相等，比较下一个字符
+            if (j == 0 || str1[i] == str2[j]) { //如果相等，比较下一个字符
                 i++;
                 j++;
             } else {
@@ -102,16 +97,19 @@
         // console.log(i - str2.length);
         if (j > str2.length) {
             return (i - str2.length);
-             console.log(i - str2.length);
+            console.log(i - str2.length);
         } else
             return 0;
     }
 
+
+    // var str1 = 'aaabcd';
     var str1 = 'aabaaabaaaabea';
     var str1_Arr = str1.split("");
     console.log("第一个字符串的长度：" + str1_Arr.length);
     // console.log(str1_Arr);
 
+    // var str2 = 'abc';
     var str2 = 'aaaab';
     var str2_Arr = str2.split("");
     console.log("第二个字符串的长度：" + str2_Arr.length);
@@ -121,16 +119,15 @@
     // Index_BF(str1_Arr, str2_Arr);
 
     console.log("BF算法运行结果：");
-    Index_BF(str1,str2,1);
+    Index_BF(str1, str2);
 
     console.log("KMP算法运行结果：");
     get_next(str2_Arr, next);
-    console.log("主串和子串在第" + index_KMP(str1,str2,0,next) + "个字符处首次匹配");
+    index_KMP(str1_Arr, str2_Arr, next)
 
     console.log("改进的KMP算法运行结果：");
-    get_next_2(str2_Arr,next);
-    console.log("主串和子串在第" + index_KMP(str1,str2,0,next) + "个字符处首次匹配");
-
+    get_next_2(str2_Arr, next);
+    index_KMP(str1_Arr, str2_Arr, next);
 </script>
 
 <body>
