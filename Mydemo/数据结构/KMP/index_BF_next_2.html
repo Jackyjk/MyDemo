@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 14:24:31
- * @LastEditTime: 2019-09-17 15:19:16
+ * @LastEditTime: 2019-09-17 15:50:05
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -44,12 +44,12 @@
     }
 
     function index_KMP(str1, str2, next) {
-        var i = 0,
-            j = 0,
-            sum = 0;
+        var i = 1,
+            j = 1;
+        //     sum = 0;
         var num = 0;
-        while ((i < str1.length && j < str2.length) && (num != str2.length)) {
-            sum++;
+        while ((i <= str1.length && j <= str2.length) && (num != str2.length)) {
+            // sum++;
             if (j == 0 || str1[i] == str2[j]) { //如果相等，比较下一个字符
                 i++;
                 j++;
@@ -65,11 +65,13 @@
         //     // console.log(i - str2.length + 1);
         // } else
         //     return 0;
+        // sum = sum + 1;
         if (num == str2.length) {
             console.log("主串和子串在第" + (i+1) + "个字符处首次匹配");
         }
-        console.log("一共比较了" + sum + "次");
+        // console.log("一共比较了" + sum + "次");
     }
+
 
     var str1 = 'aabaaabaaaabea';
     var str1_Arr = str1.split("");
