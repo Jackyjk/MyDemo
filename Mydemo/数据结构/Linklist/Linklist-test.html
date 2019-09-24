@@ -1,0 +1,51 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-24 17:34:49
+ * @LastEditTime: 2019-09-24 17:46:43
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./Linklist.js"></script>
+<script>
+
+    var nodes = [1, 4, 5, 32, 67, 89, 8, 10];
+    var list = new LinkedList();
+    //添加元素
+    nodes.forEach(function (key) {
+        list.append(key);
+    });
+
+    //测试用例
+    //返回元素所在位置的索引
+    console.log(list.indexOf(4));       //1
+    console.log(list.indexOf(89));      //5
+    // 移除89这个数字
+    list.remove(89);        
+    //检查是否已经移除，移除之后返回-1
+    console.log(list.indexOf(89));         //-1
+    //查找不存在的元素
+    console.log(list.indexOf(6));           //-1
+    //插入数值元素 50
+    list.insert(2,50);
+    //字符串连接
+    console.log(list.toString());       //1-4-50-5-32-67-8-10+
+    //得到链表的长度
+    console.log(list.size());           //8
+    //返回头节点，可以查看线性表中所有元素
+    console.log(list.getHead());        
+    //返回是否为空
+    console.log(list.isEmpty());    //false
+
+</script>
+<body>
+    
+</body>
+</html>

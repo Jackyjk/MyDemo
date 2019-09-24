@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-24 17:26:39
- * @LastEditTime: 2019-09-24 17:31:37
+ * @LastEditTime: 2019-09-24 17:38:08
  * @LastEditors: Please set LastEditors
  */
 function LinkedList() {
@@ -132,6 +132,5 @@ function LinkedList() {
         }
         return string; //{ 返回字符串
     };
-
 
 }
