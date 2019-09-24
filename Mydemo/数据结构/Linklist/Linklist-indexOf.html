@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-24 17:00:46
- * @LastEditTime: 2019-09-24 17:18:08
+ * @LastEditTime: 2019-09-24 17:25:55
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
 
         this.indexOf = function (element) {
             let current = head, // 索引 
-                index = -1;
+                index = 0   ;
             while (current) { //  循环查找
                 if (element === current.element) {
                     return index; //    返回对应的位置
@@ -53,6 +53,35 @@
                 current = current.next; //         移动至下一个元素
             }
             return -1;
+        };
+
+        this.remove = function (element) {
+            let index = this.indexOf(element);
+            return this.removeAt(index);
+        };
+
+        this.removeAt = function (position) {
+            //检查越界值
+            if (position > -1 && position < length) { // 判断位置是否有效
+                let current = head, // 头节点
+                    previous, // 前驱元素
+                    index = 0; // 
+                //移除第一项
+                if (position === 0) { // 移除第一位，直接指向列表的第二位元素
+                    head = current.next;
+                } else {
+                    while (index++ < position) { // 判断是否到达目标位置
+                        previous = current; // 引用前驱元素
+                        current = current.next; //为对所循环列表的当前元素的引用
+                    }
+                    //将previous与current的下一项链接起来：跳过current，从而移除它
+                    previous.next = current.next;
+                }
+                length--; // 移除之后减少长度
+                return current.element;
+            } else {
+                return null; // 
+            }
         };
     }
 
@@ -66,8 +95,12 @@
     // for (var i = 0; i < list.length; i++) {
     //     console.log(list);
     // }
-    
+
+    //测试用例
     console.log(list.indexOf(4));
+    console.log(list.indexOf(89));
+    // 移除89这个数字
+    list.remove(89);
     console.log(list.indexOf(89));
     console.log(list.indexOf(6));
 </script>
