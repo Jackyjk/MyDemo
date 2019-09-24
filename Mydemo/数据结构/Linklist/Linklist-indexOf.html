@@ -1,0 +1,79 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-24 17:00:46
+ * @LastEditTime: 2019-09-24 17:18:08
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function LinkedList() {
+        let Node = function (element) { // {1}  struct
+            this.element = element;
+            this.next = null;
+        };
+        let length = 0; // 定义长度
+        let head = null; // 头节点
+
+
+        this.append = function (element) {
+            var node = new Node(element), // 传入值
+                current; //表示当前节点
+            if (head === null) { //列表中第一个节点 
+                head = node;
+            } else {
+                current = head;
+                //循环列表，直到找到最后一项
+                while (current.next) {
+                    current = current.next;
+                }
+                //找到最后一项，将其next赋为node，建立链接
+                current.next = node;
+            }
+            length++; //更新列表的长度
+        };
+
+
+        this.indexOf = function (element) {
+            let current = head, // 索引 
+                index = -1;
+            while (current) { //  循环查找
+                if (element === current.element) {
+                    return index; //    返回对应的位置
+                }
+                index++; //     计数
+                current = current.next; //         移动至下一个元素
+            }
+            return -1;
+        };
+    }
+
+
+    var nodes = [1, 4, 5, 32, 67, 89, 8, 10];
+    var list = new LinkedList();
+    //添加元素
+    nodes.forEach(function (key) {
+        list.append(key);
+    });
+    // for (var i = 0; i < list.length; i++) {
+    //     console.log(list);
+    // }
+    
+    console.log(list.indexOf(4));
+    console.log(list.indexOf(89));
+    console.log(list.indexOf(6));
+</script>
+
+<body>
+
+</body>
+
+</html>
