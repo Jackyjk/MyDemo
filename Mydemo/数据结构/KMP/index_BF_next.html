@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Mr.J
  * @Date: 2019-09-09 19:07:32
- * @LastEditTime: 2019-09-17 15:50:21
+ * @LastEditTime: 2019-09-18 09:23:28
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -20,11 +20,15 @@
             k = 0;
         next[1] = 0;
 
-        while (j <= str2.length) { //长度
+        while (j < str2.length) { //长度
             if (k == 0 || str2[j] == str2[k]) {
-                next[++j] = ++k;
+                // next[++j] = ++k;
+                ++j;
+                ++k;
+                next[j] = k;
             } else {
                 k = next[k]; //模式串向右移动
+                // j--;
             }
         }
 

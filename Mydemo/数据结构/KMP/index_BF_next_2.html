@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 14:24:31
- * @LastEditTime: 2019-09-17 15:50:05
+ * @LastEditTime: 2019-09-18 09:20:30
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
         }
 
         console.log("-----next[]-------");
-        for (j = 1; j < str2.length; j++)
+        for (j = 1; j <= str2.length; j++)
             //计算的next值
             console.log("next[" + j + "]" + ":" + next[j] + "  ");
 
@@ -87,7 +87,7 @@
     // Index_BF(str1_Arr, str2_Arr);
 
     get_next_2(str2_Arr, next);
-    index_KMP(str1, str2, next);
+    // index_KMP(str1, str2, next);
 </script>
 
 <body>

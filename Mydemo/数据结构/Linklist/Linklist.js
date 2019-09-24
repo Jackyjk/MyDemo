@@ -2,21 +2,21 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-24 17:26:39
- * @LastEditTime: 2019-09-24 17:26:39
- * @LastEditors: your name
+ * @LastEditTime: 2019-09-24 17:31:37
+ * @LastEditors: Please set LastEditors
  */
 function LinkedList() {
 
 
     // this.append = function (element) {}; //向列表尾部添加一个新的项
-        // this.insert = function (position, element) {}; //向列表的特定位置插入一个新的项
-        // this.removeAt = function (position) {}; //从列表的特定位置移除一项
-        // this.remove = function (element) {}; //从列表中移除一项
-        // this.indexOf = function (element) {}; //返回元素在列表中的索引。如果列表中没有该元素则返回-1
-        // this.isEmpty = function () {}; //如果链表中不包含任何元素，返回true，如果链表长度大于0则返回false
-        // this.size = function () {}; //返回链表包含的元素个数
-        // this.getHead = function () {};
-        // this.toString = function () {}; //输出元素的值
+    // this.insert = function (position, element) {}; //向列表的特定位置插入一个新的项
+    // this.removeAt = function (position) {}; //从列表的特定位置移除一项
+    // this.remove = function (element) {}; //从列表中移除一项
+    // this.indexOf = function (element) {}; //返回元素在列表中的索引。如果列表中没有该元素则返回-1
+    // this.isEmpty = function () {}; //如果链表中不包含任何元素，返回true，如果链表长度大于0则返回false
+    // this.size = function () {}; //返回链表包含的元素个数
+    // this.getHead = function () {};
+    // this.toString = function () {}; //输出元素的值
 
 
     let Node = function (element) { // {1}  struct
