@@ -1,0 +1,72 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-24 22:48:46
+ * @LastEditTime: 2019-09-24 23:00:55
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function DoublyLinkedList() {
+        let Node = function (element) {
+            this.element = element;
+            this.next = null;
+            this.prev = null; //新增的  前驱元素的值
+        };
+        let length = 0;
+        let head = null; // 头节点
+        let tail = null; // 尾节点
+
+        this.insert = function (position, element) {
+            //检查越界值
+            if (position >= 0 && position <= length) {
+                let node = new Node(element),
+                    current = head,
+                    previous,
+                    index = 0;
+                if (position === 0) { //在第一个位置添加
+                    if (!head) { //如果列表为空 直接进行添加
+                        head = node;
+                        tail = node;
+                    } else {
+                        node.next = current;    //对第一个元素进行引用
+                        current.prev = node;    //current.prev指针将由指向null变为指向新元素
+                        head = node;
+                    }
+                } else if (position === length) { //最后一项 
+                    current = tail; // 尾节点  引用最后一个元素的值
+                    current.next = node;
+                    node.prev = current;
+                    tail = node;
+                } else {
+                    while (index++ < position) { //迭代列表，直到到达要找的位置
+                        previous = current;
+                        current = current.next;
+                    } 
+                    node.next = current; //在current和previous元素之间插入新元素，使用被插入元素的值 连接 插入元素后面的值
+                    previous.next = node;//指向插入元素的值
+                    current.prev = node; //指向插入元素的值
+                    node.prev = previous; //指向前驱，即上一个节点的元素值
+                }
+                length++; //更新列表的长度
+                return true;
+            } else {
+                return false;
+            }
+        };
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
