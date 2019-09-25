@@ -1,0 +1,70 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: Mr.J
+ * @Date: 2019-09-25 19:17:17
+ * @LastEditTime: 2019-09-25 19:25:34
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function DoublyLinkedList() {
+        let Node = function (element) {
+            this.element = element;
+            this.next = null;
+            this.prev = null; // 前驱元素的值
+        };
+        let length = 0;
+        let head = null; // 头节点
+        let tail = null; // 尾节点
+
+        this.removeAt = function (position) {
+            //检查越界值
+            if (position > -1 && position < length) {
+                let current = head,
+                    previous,
+                    index = 0;
+                //移除第一项
+                if (position === 0) {
+                    head = current.next; 
+                    //如果只有一项，更新tail 
+                    if (length === 1) { // 
+                        tail = null;
+                    } else {
+                        head.prev = null; // head指向列表中新的第一个元素
+                    }
+                } else if (position === length - 1) { //最后一项 
+                    current = tail; 
+                    tail = current.prev;
+                    tail.next = null;
+                } else {
+                    while (index++ < position) { // 从列表中间移除一个元素，迭代
+                        previous = current;
+                        current = current.next;
+                    }
+                    //将previous与current的下一项链接起来——跳过current
+                    previous.next = current.next; // 直接跳过，连接至被移除元素的下一个元素的前驱
+                    current.next.prev = previous; //将元素和下一个元素的前驱进行连接
+                }
+                length--;       //减少长度
+                return current.element;         //返回元素值
+            } else {
+                //不满足position > -1 && position < length  返回空
+                return null;
+            }
+        };
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

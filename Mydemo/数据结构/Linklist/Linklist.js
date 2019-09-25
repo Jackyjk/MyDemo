@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-24 17:26:39
- * @LastEditTime: 2019-09-24 17:38:08
+ * @LastEditTime: 2019-09-24 23:01:12
  * @LastEditors: Please set LastEditors
  */
 function LinkedList() {
@@ -28,7 +28,7 @@ function LinkedList() {
 
     this.append = function (element) {
         var node = new Node(element), // 传入值
-            current; //表示当前节点
+            current; //表示当前节点 
         if (head === null) { //列表中第一个节点 
             head = node;
         } else {
