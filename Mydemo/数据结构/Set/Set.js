@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Mr.J
  * @Date: 2019-09-25 21:10:00
- * @LastEditTime: 2019-09-25 21:10:41
+ * @LastEditTime: 2019-09-25 21:19:01
  * @LastEditors: Please set LastEditors
  */
 //创建Set函数 
@@ -16,7 +16,7 @@ function Set() {
     //向集合添加一个新的项。
     this.add = function (value) {
         if (!this.has(value)) {
-            items[value] = value; //{1}
+            items[value] = value; //检查该元素是否在集合中，进行添加
             return true;
         }
         return false;
@@ -25,36 +25,46 @@ function Set() {
     // 从集合移除一个值
     this.remove = function (value) {
         if (this.has(value)) {
-            delete items[value]; //{2}
+            delete items[value]; //存在该元素，进行移除
             return true;
         }
         return false;
     };
     //移除集合中的所有项
     this.clear = function () {
-        items = {}; // {3}
+        items = {}; // 直接制空
     };
 
     //返回集合所包含元素的数量。 与数组的length属性类似。
     this.size = function () {
-        return Object.keys(items).length; //{4}
+        return Object.keys(items).length; //返回长度
     };
+
+    //在所有浏览器中适用的size改进函数
+    this.sizeLegacy = function(){
+        let count = 0;
+        for(let key in items) { //遍历items对象的所有属性
+        if(items.hasOwnProperty(key)) //检查它们是否是对象自身的属性，避免重复计数
+        ++count; //递增
+        }
+        return count;
+        };
 
     //返回一个包含集合中所有值的数组
     //Chrome Firefox IE10+
     this.values = function () {
         let values = [];
         for (let i = 0, keys = Object.keys(items); i < keys.length; i++) {
-            values.push(items[keys[i]]);
+            values.push(items[keys[i]]);    //使用push方法将值进行传递
         }
-        return values;
+        return values;      //返回数组
     };
     //all  browers
     this.valuesLegacy = function () {
         let values = [];
-        for (let key in items) { //{7}
-            if (items.hasOwnProperty(key)) { //{8}
-                values.push(items[key]);
+        for (let key in items) { //遍历items对象的所有属性
+            if (items.hasOwnProperty(key)) { //添加一个数组
+                values.push(items[key]);    //push进去
             }
         }
         return values;
