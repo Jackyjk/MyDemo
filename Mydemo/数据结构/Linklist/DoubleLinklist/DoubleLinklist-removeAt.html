@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Mr.J
  * @Date: 2019-09-25 19:17:17
- * @LastEditTime: 2019-09-25 19:25:34
+ * @LastEditTime: 2019-09-25 19:34:17
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -25,6 +25,24 @@
         let head = null; // 头节点
         let tail = null; // 尾节点
 
+        this.append = function (element) {
+            var node = new Node(element), // 传入值
+                current; //表示当前节点 
+            if (head === null) { //列表中第一个节点 
+                head = node;
+            } else {
+                current = head;
+                //循环列表，直到找到最后一项
+                while (current.next) {
+                    current = current.next;
+                }
+                //找到最后一项，将其next赋为node，建立链接
+                current.next = node;
+            }
+            length++; //更新列表的长度
+        };
+
+
         this.removeAt = function (position) {
             //检查越界值
             if (position > -1 && position < length) {
@@ -33,7 +51,7 @@
                     index = 0;
                 //移除第一项
                 if (position === 0) {
-                    head = current.next; 
+                    head = current.next;
                     //如果只有一项，更新tail 
                     if (length === 1) { // 
                         tail = null;
@@ -41,7 +59,7 @@
                         head.prev = null; // head指向列表中新的第一个元素
                     }
                 } else if (position === length - 1) { //最后一项 
-                    current = tail; 
+                    current = tail;
                     tail = current.prev;
                     tail.next = null;
                 } else {
@@ -53,14 +71,24 @@
                     previous.next = current.next; // 直接跳过，连接至被移除元素的下一个元素的前驱
                     current.next.prev = previous; //将元素和下一个元素的前驱进行连接
                 }
-                length--;       //减少长度
-                return current.element;         //返回元素值
+                length--; //减少长度
+                console.log(position + '处的元素已经移除！！！');
+                return current.element; //返回元素值
             } else {
                 //不满足position > -1 && position < length  返回空
                 return null;
             }
         };
     }
+
+    var nodes = [1, 4, 5, 32, 67, 89, 8, 10];
+    var list = new DoublyLinkedList();
+    //添加元素
+    nodes.forEach(function (key) {
+        list.append(key);
+    });
+
+    list.removeAt(3);
 </script>
 
 <body>
