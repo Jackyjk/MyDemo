@@ -1,0 +1,40 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-25 21:19:41
+ * @LastEditTime: 2019-09-25 21:28:09
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./Set.js"></script>
+<script>
+
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+    console.log(setA.values());
+    let setB = new Set();
+    setB.add(3);
+    setB.add(4);
+    setB.add(5);
+    setB.add(6);
+    console.log(setB.values());
+
+    let unionAB = setA.union(setB);
+    console.log(unionAB.values());      //1,2,3,4,5,6
+</script>
+
+<body>
+
+</body>
+
+</html>

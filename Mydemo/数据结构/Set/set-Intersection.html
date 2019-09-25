@@ -1,0 +1,50 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: Mr.J
+ * @Date: 2019-09-25 21:27:24
+ * @LastEditTime: 2019-09-25 21:35:31
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./Set.js"></script>
+<script>
+    // //进行交集操作
+    // this.intersection = function (otherSet) {
+    //     let intersectionSet = new Set(); //创建一个新的Set实例
+    //     let values = this.values();      //传入参数的数组的值
+    //     for (let i = 0; i < values.length; i++) { //遍历当前Set实例所有的值
+    //         if (otherSet.has(values[i])) { //验证它们是否也存在于otherSet实例
+    //             intersectionSet.add(values[i]); //添加到创建的intersectionSet变量中
+    //         }
+    //     }
+    //     return intersectionSet;      //返回最终的数组
+    // }
+
+
+    let setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+    console.log(setA.values());
+    let setB = new Set();
+    setB.add(2);
+    setB.add(3);
+    setB.add(4);
+    console.log(setB.values());
+    let intersectionAB = setA.intersection(setB);
+    console.log(intersectionAB.values());       //2,3
+</script>
+
+<body>
+
+</body>
+
+</html>

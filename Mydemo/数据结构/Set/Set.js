@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Mr.J
  * @Date: 2019-09-25 21:10:00
- * @LastEditTime: 2019-09-25 21:19:01
+ * @LastEditTime: 2019-09-25 21:28:30
  * @LastEditors: Please set LastEditors
  */
 //创建Set函数 
@@ -69,4 +69,30 @@ function Set() {
         }
         return values;
     };
+
+    //进行并集操作
+    this.union = function(otherSet) {
+        let unionSet = new Set(); // 创建一个并集数组
+        let values = this.values(); //遍历并全部添加到代表并集的集合中
+        for (let i = 0; i < values.length; i++) {
+            unionSet.add(values[i]);
+        }
+        values = otherSet.values(); //遍历并全部添加到代表并集的集合中
+        for (let i = 0; i < values.length; i++) {
+            unionSet.add(values[i]);
+        }
+        return unionSet;
+    }
+
+     //进行交集操作
+     this.intersection = function (otherSet) {
+        let intersectionSet = new Set(); //创建一个新的Set实例
+        let values = this.values();
+        for (let i = 0; i < values.length; i++) { //遍历当前Set实例所有的值
+            if (otherSet.has(values[i])) { //验证它们是否也存在于otherSet实例
+                intersectionSet.add(values[i]); //添加到创建的intersectionSet变量中
+            }
+        }
+        return intersectionSet;
+    }
 }
