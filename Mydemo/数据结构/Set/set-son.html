@@ -1,0 +1,53 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: Mr.J
+ * @Date: 2019-09-26 18:06:26
+ * @LastEditTime: 2019-09-26 20:07:33
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./Set.js"></script>
+<script>
+    // this.subset = function (otherSet) {
+    //     if (this.size() > otherSet.size()) {  //不能保证是子集
+    //         return false;
+    //     } else {
+    //         let values = this.values();
+    //         for (let i = 0; i < values.length; i++) { //遍历所有元素
+    //             if (!otherSet.has(values[i])) { //如果所有元素都不存在在该集合中
+    //                 return false; 
+    //             }
+    //         }
+    //         return true; //存在子集
+    //     }
+    // };
+
+
+    let setA = new Set();       //1，2
+    setA.add(1);
+    setA.add(2);
+    let setB = new Set();       //1，2，3
+    setB.add(1);
+    setB.add(2);
+    setB.add(3);
+    let setC = new Set();       //2，3，4
+    setC.add(2);
+    setC.add(3);
+    setC.add(4);
+    console.log(setA.subset(setB));     //true  B是A的子集
+    console.log(setA.subset(setC));     //false C不是A的子集
+</script>
+
+<body>
+
+</body>
+
+</html>

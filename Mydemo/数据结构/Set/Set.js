@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Mr.J
  * @Date: 2019-09-25 21:10:00
- * @LastEditTime: 2019-09-26 16:32:05
+ * @LastEditTime: 2019-09-26 20:05:51
  * @LastEditors: Please set LastEditors
  */
 //创建Set函数 
@@ -106,5 +106,20 @@ function Set() {
             }
         }
         return differenceSet;
+    };
+
+    //判断是否是子集
+    this.subset = function (otherSet) {
+        if (this.size() > otherSet.size()) {  //不能保证是子集
+            return false;
+        } else {
+            let values = this.values();
+            for (let i = 0; i < values.length; i++) { //遍历所有元素
+                if (!otherSet.has(values[i])) { //如果所有元素都不存在在该集合中
+                    return false; 
+                }
+            }
+            return true; //存在子集
+        }
     };
 }
