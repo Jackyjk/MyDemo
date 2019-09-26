@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Mr.J
  * @Date: 2019-09-25 21:10:00
- * @LastEditTime: 2019-09-25 21:28:30
+ * @LastEditTime: 2019-09-26 16:32:05
  * @LastEditors: Please set LastEditors
  */
 //创建Set函数 
@@ -41,14 +41,14 @@ function Set() {
     };
 
     //在所有浏览器中适用的size改进函数
-    this.sizeLegacy = function(){
+    this.sizeLegacy = function () {
         let count = 0;
-        for(let key in items) { //遍历items对象的所有属性
-        if(items.hasOwnProperty(key)) //检查它们是否是对象自身的属性，避免重复计数
-        ++count; //递增
+        for (let key in items) { //遍历items对象的所有属性
+            if (items.hasOwnProperty(key)) //检查它们是否是对象自身的属性，避免重复计数
+                ++count; //递增
         }
         return count;
-        };
+    };
 
     //返回一个包含集合中所有值的数组
     //Chrome Firefox IE10+
@@ -71,7 +71,7 @@ function Set() {
     };
 
     //进行并集操作
-    this.union = function(otherSet) {
+    this.union = function (otherSet) {
         let unionSet = new Set(); // 创建一个并集数组
         let values = this.values(); //遍历并全部添加到代表并集的集合中
         for (let i = 0; i < values.length; i++) {
@@ -84,8 +84,8 @@ function Set() {
         return unionSet;
     }
 
-     //进行交集操作
-     this.intersection = function (otherSet) {
+    //进行交集操作
+    this.intersection = function (otherSet) {
         let intersectionSet = new Set(); //创建一个新的Set实例
         let values = this.values();
         for (let i = 0; i < values.length; i++) { //遍历当前Set实例所有的值
@@ -95,4 +95,16 @@ function Set() {
         }
         return intersectionSet;
     }
+
+    //进行差集操作
+    this.difference = function (otherSet) {
+        let differenceSet = new Set(); //创建差集数组集合
+        let values = this.values();
+        for (let i = 0; i < values.length; i++) { //遍历集合
+            if (!otherSet.has(values[i])) { //如果不存在该值
+                differenceSet.add(values[i]); //添加在差集数组中
+            }
+        }
+        return differenceSet;
+    };
 }
