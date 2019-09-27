@@ -1,0 +1,118 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-27 16:15:15
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-27 16:28:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HashTable-ValuePair</title>
+</head>
+<script src="../Linklist/Linklist.js"></script>
+
+<script>
+    var ValuePair = function (key, value) {
+        //键值对
+        this.key = key;
+        this.value = value;
+        this.toString = function () {
+            //输出
+            return '[' + this.key + ' - ' + this.value + ']';
+        }
+
+        var table = [];
+
+        //散列函数  私有
+        var loseloseHashCode = function (key) {
+            var hash = 0; //总和
+            for (var i = 0; i < key.length; i++) { //遍历key
+                //使用Javascript中String.charCodeAt()方法将从ASCII表中查到的每个字符对应的ASCII值加到hash变量
+                hash += key.charCodeAt(i);
+            }
+            return hash % 28; //得到较小的数值，与任意数进行取余
+        };
+
+        this.put = function (key, value) {
+            var position = loseloseHashCode(key);
+            if (table[position] == undefined) { //验证要加入新元素的位置是否已经被占据
+                table[position] = new LinkedList();
+            }
+            //Linklist.append方法向LinkedList实例中添加一个ValuePair实例（键和值）
+            table[position].append(new ValuePair(key, value));
+            console.log(position + ' - ' + key); //输出内容
+        };
+        //返回根据键值检索到的特定的值
+        this.get = function (key) {
+            var position = loseloseHashCode(key);
+            if (table[position] !== undefined) { //在特定的位置上是否有元素存在
+                //遍历链表来寻找键/值
+                var current = table[position].getHead(); //获取链表表头的引用
+                while (current.next) { //从链表的头部遍历到尾部
+                    if (current.element.key === key) { //确定它是否就是我们要找的键
+                        return current.element.value; //返回Node的值
+                    }
+                    current = current.next; //访问下一个节点
+                }
+                //检查元素在链表第一个或最后一个节点的情况
+                if (current.element.key === key) { //第一个或最后一个节点，返回其值
+                    return current.element.value;
+                }
+            }
+            return undefined; //undefined表示在HashTable实例中没有找到这个值
+        };
+
+        //根据键值从散列表中移除值
+        this.remove = function (key) {
+            var position = loseloseHashCode(key);
+            if (table[position] !== undefined) {
+                var current = table[position].getHead();
+                while (current.next) {
+                    if (current.element.key === key) { //current元素就是要找的元素
+                        table[position].remove(current.element); //直接进行移除
+                        if (table[position].isEmpty()) { //链表中不存在任何元素
+                            table[position] = undefined; //返回undefined
+                        }
+                        return true; //已经移除，返回true
+                    }
+                    current = current.next;
+                }
+                // 检查是否为第一个或最后一个元素
+                if (current.element.key === key) { //第一个或者最后一个
+                    table[position].remove(current.element);
+                    if (table[position].isEmpty()) {
+                        table[position] = undefined;
+                    }
+                    return true;
+                }
+            }
+            return false; //未找到该元素，返回false
+        };
+    };
+
+
+    var hash1 = new ValuePair();
+    hash1.put('Gandalf', 'gandalf@email.com');
+    hash1.put('John', 'johnsnow@email.com');
+    hash1.put('Tyrion', 'tyrion@email.com');
+    hash1.put('Aaron', 'aaron@email.com');
+    hash1.put('Donnie', 'donnie@email.com');
+    hash1.put('Ana', 'ana@email.com');
+    hash1.put('Jonathan', 'jonathan@email.com');
+    hash1.put('Jamie', 'jamie@email.com');
+    hash1.put('Sue', 'sue@email.com');
+    hash1.put('Mindy', 'mindy@email.com');
+    hash1.put('Paul', 'paul@email.com');
+    hash1.put('Nathan', 'nathan@email.com');
+</script>
+
+<body>
+
+</body>
+
+</html>
