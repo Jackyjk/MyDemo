@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-27 16:15:15
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-27 16:28:03
+ * @LastEditTime: 2019-09-27 16:45:14
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,27 @@
 <script src="../Linklist/Linklist.js"></script>
 
 <script>
-    var ValuePair = function (key, value) {
+    /*
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-27 16:23:33
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-27 16:23:33
+ */
+function HashTable() {
+    var table = [];
+
+    //散列函数  私有
+    var loseloseHashCode = function (key) {
+        var hash = 0; //总和
+        for (var i = 0; i < key.length; i++) { //遍历key
+            //使用Javascript中String.charCodeAt()方法将从ASCII表中查到的每个字符对应的ASCII值加到hash变量
+            hash += key.charCodeAt(i);
+        }
+        return hash % 28; //得到较小的数值，与任意数进行取余
+    };
+
+    this.ValuePair = function (key, value) {
         //键值对
         this.key = key;
         this.value = value;
@@ -25,18 +45,6 @@
             //输出
             return '[' + this.key + ' - ' + this.value + ']';
         }
-
-        var table = [];
-
-        //散列函数  私有
-        var loseloseHashCode = function (key) {
-            var hash = 0; //总和
-            for (var i = 0; i < key.length; i++) { //遍历key
-                //使用Javascript中String.charCodeAt()方法将从ASCII表中查到的每个字符对应的ASCII值加到hash变量
-                hash += key.charCodeAt(i);
-            }
-            return hash % 28; //得到较小的数值，与任意数进行取余
-        };
 
         this.put = function (key, value) {
             var position = loseloseHashCode(key);
@@ -94,21 +102,22 @@
             return false; //未找到该元素，返回false
         };
     };
+}
 
 
-    var hash1 = new ValuePair();
-    hash1.put('Gandalf', 'gandalf@email.com');
-    hash1.put('John', 'johnsnow@email.com');
-    hash1.put('Tyrion', 'tyrion@email.com');
-    hash1.put('Aaron', 'aaron@email.com');
-    hash1.put('Donnie', 'donnie@email.com');
-    hash1.put('Ana', 'ana@email.com');
-    hash1.put('Jonathan', 'jonathan@email.com');
-    hash1.put('Jamie', 'jamie@email.com');
-    hash1.put('Sue', 'sue@email.com');
-    hash1.put('Mindy', 'mindy@email.com');
-    hash1.put('Paul', 'paul@email.com');
-    hash1.put('Nathan', 'nathan@email.com');
+    var hash1 = new HashTable();
+    hash1.ValuePair().put('Gandalf', 'gandalf@email.com');
+    hash1.ValuePair().put('John', 'johnsnow@email.com');
+    hash1.ValuePair().put('Tyrion', 'tyrion@email.com');
+    hash1.ValuePair().put('Aaron', 'aaron@email.com');
+    hash1.ValuePair().put('Donnie', 'donnie@email.com');
+    hash1.ValuePair().put('Ana', 'ana@email.com');
+    hash1.ValuePair().put('Jonathan', 'jonathan@email.com');
+    hash1.ValuePair().put('Jamie', 'jamie@email.com');
+    hash1.ValuePair().put('Sue', 'sue@email.com');
+    hash1.ValuePair().put('Mindy', 'mindy@email.com');
+    hash1.ValuePair().put('Paul', 'paul@email.com');
+    hash1.ValuePair().put('Nathan', 'nathan@email.com');
 </script>
 
 <body>
