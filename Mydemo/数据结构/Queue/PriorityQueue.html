@@ -1,0 +1,63 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-28 17:57:54
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-28 18:09:07
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优先队列</title>
+</head>
+<script>
+    function PriorityQueue() {
+        let items = [];
+
+        //优先队列函数
+        function QueueElement(element, priority) { // priority 表示该元素的优先级
+            this.element = element;
+            this.priority = priority;
+        }
+        this.enqueue = function (element, priority) {
+            let queueElement = new QueueElement(element, priority);     //创建
+            let added = false;
+            for (let i = 0; i < items.length; i++) {
+                if (queueElement.priority < items[i].priority) { //为空直接入队 或者 比较元素的优先级，然后进行入队
+                    items.splice(i, 0, queueElement); // 使用splice函数插入新元素
+                    added = true;
+                    break; // 终止循环，按照优先级进行排列
+                }
+            }
+            if (!added) {
+                items.push(queueElement); // 优先级大于任何已知元素，直接进行入队尾操作
+            }
+        };
+        this.print = function () {
+            for (let i = 0; i < items.length; i++) {
+                console.log(`${items[i].element} - ${items[i].priority}`);      //输出 ${} 符号直接输出里面的内容,相当于下面的语句
+                // console.log(items[i].element + ' - ' + items[i].priority);
+            }
+        };
+        //其他方法和默认的Queue实现相同
+    }
+
+
+    let priorityQueue = new PriorityQueue();
+    priorityQueue.enqueue("yjk", 2);
+    priorityQueue.enqueue("Jack", 1);
+    priorityQueue.enqueue("Ms_yjk", 4);
+    priorityQueue.enqueue("Mr.J", 1);
+    //输出信息
+    priorityQueue.print();
+</script>
+
+<body>
+
+</body>
+
+</html>

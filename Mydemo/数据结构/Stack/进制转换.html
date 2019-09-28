@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-28 10:57:17
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-28 11:04:17
+ * @LastEditTime: 2019-09-28 11:07:08
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
             rem,        //余数
             baseString = '',        //空字符串
             digits = '0123456789ABCDEF'; //基数
-        while (decNumber > 0) {
+        while (decNumber > 0) {         //
             rem = Math.floor(decNumber % base);     //所求得的余数
             remStack.push(rem);             //入栈
             decNumber = Math.floor(decNumber / base);       //整除之后，使用Math.floor函数返回整数部分

@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-28 17:50:05
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-28 17:58:34
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    let queue = new Queue();
+    console.log(queue.isEmpty()); //输出true
+    //添加内容
+    queue.enqueue("Yjk");
+    queue.enqueue("Jack");
+    queue.enqueue("Mr.J");
+
+    // 添加另一个元素：
+    queue.enqueue("Ms_yjk");
+    queue.print();  //Yjk,Jack,Mr.J,Ms_yjk
+    console.log(queue.size()); //输出4
+    console.log(queue.isEmpty()); //输出false
+    queue.dequeue();
+    queue.dequeue();
+    queue.print();      //Mr.J,Ms_yjk  移除队列前面的两个元素内容
+</script>
+
+<body>
+
+</body>
+
+</html>
