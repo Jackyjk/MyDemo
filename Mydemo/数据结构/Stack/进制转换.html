@@ -1,0 +1,45 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-28 10:57:17
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-28 11:04:17
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./stack.js"></script>
+<script>
+    //实现任意进制的转换   参数：(十进制数字，要求转换的进制)
+    function baseConverter(decNumber, base) {
+        var remStack = new Stack(),         //创建stack对象实例
+            rem,        //余数
+            baseString = '',        //空字符串
+            digits = '0123456789ABCDEF'; //基数
+        while (decNumber > 0) {
+            rem = Math.floor(decNumber % base);     //所求得的余数
+            remStack.push(rem);             //入栈
+            decNumber = Math.floor(decNumber / base);       //整除之后，使用Math.floor函数返回整数部分
+        }
+        while (!remStack.isEmpty()) {   //栈不为空
+            baseString += digits[remStack.pop()]; //数字进行转换
+        }
+        return baseString;
+    }
+
+    console.log(baseConverter(12345, 2));          //二进制转换
+    console.log(baseConverter(12345, 8));          //八进制转换
+    console.log(baseConverter(12345, 16));         //十六进制转换
+</script>
+
+<body>
+
+</body>
+
+</html>
