@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-28 10:34:25
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-28 10:44:29
+ * @LastEditTime: 2019-09-28 10:44:40
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,7 @@
         this.toString = function () {
             var s = '';
             for (var i = 0; i < vertices.length; i++) { //迭代vertices数组列表
-                s += vertices[i] + ' -> ';
+                s += vertices[i] + ' -> '; 
                 var neighbors = adjList.get(vertices[i]); //取得该顶点的邻接表
                 for (var j = 0; j < neighbors.length; j++) { //迭代该邻接表
                     s += neighbors[j] + ' ';

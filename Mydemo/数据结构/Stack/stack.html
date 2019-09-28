@@ -1,0 +1,42 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-28 10:50:38
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-28 10:57:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./stack.js"></script>
+<script>
+
+    let stack = new Stack();
+    console.log(stack.isEmpty()); //输出为true
+    stack.push(10);
+    stack.push(6);
+    console.log(stack.peek()); //输出6
+
+    stack.push(32);
+    console.log(stack.size()); //输出3
+    console.log(stack.isEmpty()); //输出false
+
+    stack.push(45);
+
+    stack.pop();
+    stack.pop();
+    console.log(stack.size()); //输出2
+    stack.print(); //输出[10,6]
+</script>
+
+<body>
+
+</body>
+
+</html>
