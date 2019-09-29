@@ -1,0 +1,64 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-29 22:42:44
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-29 23:03:34
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    /*String.prototype.toJadenCase = function () {
+        //...
+        var _str = [];
+        var newStr = [];
+        _str = str.split(' ');
+        // console.log(str.split(' ').length);
+        // for(var i=0;i<str.split(' ').length;i++){
+        //     _str[i] = str[i];
+        // }
+        // console.log(_str);
+        // console.log(_str[0]);
+        // console.log(_str[0].split(''));
+        // console.log(_str[0].split('')[0]);
+        for (var i = 0; i < str.split(' ').length; i++) {
+            for (var j = 0; j < _str[i].length; j++) {
+                if (96 < (_str[i].split('')[0]) < 123){
+                    _str[i].split('')[0] = _str[i].split('')[0].toUpperCase;
+                    console.log( _str[i].split('')[0]);
+                }
+            }
+        }
+        return str;
+    };
+    */
+
+
+    String.prototype.toJadenCase = function () {
+        var str = this;
+        var arr = str.toLowerCase().split(' ');
+        for (i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+        }
+        return arr.join(' ');
+    };
+
+
+
+
+    var str = "How can mirrors be real if our eyes aren't real";
+    console.log(str.toJadenCase());
+</script>
+
+<body>
+
+</body>
+
+</html>
