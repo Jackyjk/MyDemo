@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-29 12:01:31
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-29 16:34:52
+ * @LastEditTime: 2019-09-29 17:47:28
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +16,9 @@
 </head>
 <script>
     function findShort(s) {
-        var str = [];       //分词数组
-        var num;            //计数
-        var str1 = [];      //分词计算长度
+        var str = []; //分词数组
+        var num; //计数
+        var str1 = []; //分词计算长度
         str = s.split(' ');
         // console.log(str);
         // console.log(str.length);
@@ -37,11 +37,30 @@
                 num = num;
             }
         }
-        console.log(num);
+        return num;
     }
 
-    findShort("bitcoin take over theer world maybe whose knows perhaps");
-    findShort('asdasdasd wqerer gfg dsds a');
+    console.log(findShort("bitcoin take over theer world maybe whose knows perhaps"));
+    console.log(findShort('asdasdasd wqerer gfg dsds a'));
+
+
+    //other
+
+    function findShort(s) {
+        var arr = s.split(' ');
+        var smallest = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].length < smallest.length) {
+                smallest = arr[i];
+            }
+        }
+        return smallest.length;
+    }
+
+    //?
+    function findShort(s) {
+        return Math.min(...s.split(" ").map(s => s.length));
+    }
 </script>
 
 <body>

@@ -1,0 +1,62 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-29 17:18:37
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-29 17:42:31
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find the unique number</title>
+</head>
+<script>
+    function findUniq(arr) {
+        // do magic
+        var uniqNum;
+        var sameNum = arr[0];
+        var sameCount = 0;
+        var uniqNumCount = 0;
+        var num1;
+        var num2;
+        var final_num;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == sameNum) {
+                sameCount++;
+                num1 = arr[i];
+            } else {
+                uniqNumCount++;
+                num2 = arr[i];
+            }
+        }
+
+        if (sameCount > uniqNumCount) {
+            final_num = num2;
+        } else {
+            final_num = num1;
+        }
+        return final_num;
+    }
+
+    findUniq([0, 1, 0]);
+    findUniq([1, 1, 1, 2, 1, 1]);
+    findUniq([3, 10, 3, 3, 3]);
+    findUniq([0, 0, 0.55, 0, 0]);
+
+
+//other
+    function findUniq(arr) {
+        arr.sort((a, b) => a - b);
+        return arr[0] == arr[1] ? arr.pop() : arr[0]
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

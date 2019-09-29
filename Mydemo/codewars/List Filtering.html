@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-29 16:38:00
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-29 17:13:22
+ * @LastEditTime: 2019-09-29 17:17:19
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +31,11 @@
             }
         }
 
-        for(var k=0;k<num.length;k++){
-            if(num[k] == 'flag'){
-                num.splice(k,1);
-                k--;//删除一个元素之后，数组的长度会减少，相应的会出现角标越界，--操作保证不出bug
-            }else{
+        for (var k = 0; k < num.length; k++) {
+            if (num[k] == 'flag') {
+                num.splice(k, 1);
+                k--; //删除一个元素之后，数组的长度会减少，相应的会出现角标越界，--操作保证不出bug
+            } else {
                 num[k] = num[k];
             }
         }
@@ -43,8 +43,30 @@
     }
 
     console.log(filter_list([1, 2, 'a', 'b']));
-    console.log(filter_list([1, 'a', 'b', 0,15]));
-    console.log(filter_list([1, 2, 'aasf', '1', '123',123]))
+    console.log(filter_list([1, 'a', 'b', 0, 15]));
+    console.log(filter_list([1, 2, 'aasf', '1', '123', 123]))
+
+
+    console.log('other pass ways');
+
+    function filter_list1(l) {
+        return l.filter(function (v) {
+            return typeof v == 'number'
+        })
+    }
+
+    console.log(filter_list1([1, 2, 'a', 'b']));
+    console.log(filter_list1([1, 'a', 'b', 0, 15]));
+    console.log(filter_list1([1, 2, 'aasf', '1', '123', 123]))
+
+
+    function filter_list2(l) {
+        return l.filter(Number.isInteger);
+    }
+
+    console.log(filter_list2([1, 2, 'a', 'b']));
+    console.log(filter_list2([1, 'a', 'b', 0, 15]));
+    console.log(filter_list2([1, 2, 'aasf', '1', '123', 123]))
     // console.log(typeof (1));
 </script>
 
