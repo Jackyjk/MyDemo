@@ -1,0 +1,51 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-29 12:01:31
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-29 12:20:40
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shortest Wordt</title>
+</head>
+<script>
+    function findShort(s) {
+        var str = [];       //分词数组
+        var num;            //计数
+        var str1 = [];      //分词计算长度
+        str = s.split(' ');
+        // console.log(str);
+        // console.log(str.length);
+        for (var i = 0; i < str.length; i++) {
+            str1[i] = str[i].split('');
+            // console.log(str1[i]);
+        }
+
+        num = str1[0].length;
+        for (var j = 1; j < str.length; j++) {
+            // console.log(str1[j]);
+            // console.log(num);
+            if (num > str1[j].length) {
+                num = str1[j].length;
+            } else {
+                num = num;
+            }
+        }
+        console.log(num);
+    }
+
+    findShort("bitcoin take over the world maybe who knows perhaps");
+    findShort('turns out random test cases are easier than writing out basic ones');
+</script>
+
+<body>
+
+</body>
+
+</html>
