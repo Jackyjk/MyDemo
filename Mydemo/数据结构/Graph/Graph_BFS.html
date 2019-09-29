@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-29 12:30:51
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-29 12:47:29
+ * @LastEditTime: 2019-09-29 17:13:11
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +93,26 @@
     }
 
 
-    
+    var graph = new Graph();
+    var myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']; //添加到图中的顶点
+    for (var i = 0; i < myVertices.length; i++) { //其中的值逐一添加到我们的图
+        graph.addVertex(myVertices[i]);
+    }
+    graph.addEdge('A', 'B'); //添加想要的边
+    graph.addEdge('A', 'C');
+    graph.addEdge('A', 'D');
+    graph.addEdge('C', 'D');
+    graph.addEdge('C', 'G');
+    graph.addEdge('D', 'G');
+    graph.addEdge('D', 'H');
+    graph.addEdge('B', 'E');
+    graph.addEdge('B', 'F');
+    graph.addEdge('E', 'I');
+
+    function printNode(value) { //{16}
+        console.log('Visited vertex: ' + value); //{17}
+    }
+    graph.bfs(myVertices[0], printNode); //{18}
 </script>
 
 <body>

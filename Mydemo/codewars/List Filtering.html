@@ -1,0 +1,55 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-09-29 16:38:00
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-09-29 17:13:22
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Filtering</title>
+</head>
+<script>
+    function filter_list(l) {
+        // Return a new array with the strings filtered out
+        var item = [];
+        var num = [];
+        for (var i = 0; i < l.length; i++) {
+            item[i] = typeof (l[i]);
+        }
+
+        for (var i = 0; i < l.length; i++) {
+            if (item[i] == 'number') {
+                num[i] = l[i];
+            } else {
+                num[i] = 'flag';
+            }
+        }
+
+        for(var k=0;k<num.length;k++){
+            if(num[k] == 'flag'){
+                num.splice(k,1);
+                k--;//删除一个元素之后，数组的长度会减少，相应的会出现角标越界，--操作保证不出bug
+            }else{
+                num[k] = num[k];
+            }
+        }
+        return num;
+    }
+
+    console.log(filter_list([1, 2, 'a', 'b']));
+    console.log(filter_list([1, 'a', 'b', 0,15]));
+    console.log(filter_list([1, 2, 'aasf', '1', '123',123]))
+    // console.log(typeof (1));
+</script>
+
+<body>
+
+</body>
+
+</html>
