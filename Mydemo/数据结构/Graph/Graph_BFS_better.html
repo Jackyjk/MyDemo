@@ -1,9 +1,9 @@
 <!--
  * @fileheader.Author: Mr.J
  * @fileheader.LastModifiedBy: Mr.J
- * @Date: 2019-09-29 12:30:51
+ * @Date: 2019-10-01 14:30:51
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-01 21:02:09
+ * @LastEditTime: 2019-10-01 22:38:45
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,11 +12,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BFS_1</title>
+    <title>BFS_better</title>
 </head>
 <script src="./Graph.js"></script>
 <script src="../Dictionary/Dictionary.js"></script>
 <script src="../Queue/Queue.js"></script>
+<script src="../Stack/stack.js"></script>
 <script>
     function Graph() {
         var vertices = []; //存储图中所有顶点的名字}
@@ -69,6 +70,7 @@
         //     (c) 将u所有未被访问过的邻点（白色）入队列；
         //     (d) 将u标注为已被探索的（黑色）。
 
+
         this.bfs = function (v, callback) {
             var color = initializeColor(), //初始化所有节点的颜色信息是白色
                 queue = new Queue(); //存储待访问和待探索的顶点
@@ -90,6 +92,40 @@
                 }
             }
         };
+
+
+        this.BFS = function (v) {
+            var color = initializeColor(),
+                queue = new Queue(),
+                d = [], //表示距离数组
+                pred = []; //表示前溯点数组
+            queue.enqueue(v);
+            for (var i = 0; i < vertices.length; i++) { //循环遍历数组赋值
+                d[vertices[i]] = 0; //用0来初始化数组d
+                pred[vertices[i]] = null; //null来初始化数组pred
+            }
+            while (!queue.isEmpty()) {
+                var u = queue.dequeue(),
+                    neighbors = adjList.get(u);
+                color[u] = 'grey';
+                for (i = 0; i < neighbors.length; i++) {
+                    var w = neighbors[i];
+                    if (color[w] === 'white') {
+                        color[w] = 'grey';
+                        d[w] = d[u] + 1; //给d[u]加1来设置v和w之间的距离
+                        pred[w] = u; //顶点u的邻点w时，则设置w的前溯点值为u
+                        queue.enqueue(w);
+                    }
+                }
+                color[u] = 'black';
+            }
+            return { //返回了一个包含d和pred的对象
+                distances: d,
+                predecessors: pred
+            };
+        };
+
+
     }
 
 
@@ -109,10 +145,27 @@
     graph.addEdge('B', 'F');
     graph.addEdge('E', 'I');
 
-    function printNode(value) { 
+    function printNode(value) {
         console.log('Visited vertex: ' + value); //输出值
     }
     graph.bfs(myVertices[0], printNode); //调用函数
+    var shortestPathA = graph.BFS(myVertices[0]);
+    console.log(shortestPathA);
+
+    var fromVertex = myVertices[0]; //顶点A作为源顶点
+    for (var i = 1; i < myVertices.length; i++) { //{10}
+        var toVertex = myVertices[i], //顶点数组得到toVertex
+            path = new Stack(); //创建一个栈存储路径值
+        for (var v = toVertex; v !== fromVertex; v = shortestPathA.predecessors[v]) { //追溯toVertex到fromVertex的路径
+            path.push(v); //变量v添加到栈中
+        }
+        path.push(fromVertex); //最后添加源顶点
+        var s = path.pop(); //弹出源定点
+        while (!path.isEmpty()) { 
+            s += ' - ' + path.pop(); //栈中移出一个项并将其拼接到字符串s的后面
+        }
+        console.log(s); //输出路径
+    }
 </script>
 
 <body>
