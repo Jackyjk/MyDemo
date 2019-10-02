@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-01 14:30:51
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-01 22:38:45
+ * @LastEditTime: 2019-10-02 22:59:46
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +61,7 @@
             return color;
         };
 
-        //BFS 步骤
+        // BFS 步骤
         // (1) 创建一个队列Q。
         // (2) 将v标注为被发现的（灰色），并将v入队列Q。
         // (3) 如果Q非空，则运行以下步骤：
@@ -101,15 +101,15 @@
                 pred = []; //表示前溯点数组
             queue.enqueue(v);
             for (var i = 0; i < vertices.length; i++) { //循环遍历数组赋值
-                d[vertices[i]] = 0; //用0来初始化数组d
-                pred[vertices[i]] = null; //null来初始化数组pred
+                d[vertices[i]] = 0; //用0来初始化数组d  表示距离
+                pred[vertices[i]] = null; //null来初始化数组pred   存储前溯点
             }
-            while (!queue.isEmpty()) {
-                var u = queue.dequeue(),
-                    neighbors = adjList.get(u);
-                color[u] = 'grey';
-                for (i = 0; i < neighbors.length; i++) {
-                    var w = neighbors[i];
+            while (!queue.isEmpty()) { //队列非空
+                var u = queue.dequeue(), //操作队列，从中移除一个顶点
+                    neighbors = adjList.get(u); //取得包含所有邻点的邻接表
+                color[u] = 'grey'; // 表示已经访问但未探索
+                for (var i = 0; i < neighbors.length; i++) { // 对u的每个邻点
+                    var w = neighbors[i]; // 取值
                     if (color[w] === 'white') {
                         color[w] = 'grey';
                         d[w] = d[u] + 1; //给d[u]加1来设置v和w之间的距离
@@ -152,14 +152,14 @@
     var shortestPathA = graph.BFS(myVertices[0]);
     console.log(shortestPathA);
 
-    var fromVertex = myVertices[0]; //顶点A作为源顶点
-    for (var i = 1; i < myVertices.length; i++) { //{10}
+    var finalVertexPath = myVertices[0]; //顶点A作为源顶点
+    for (var i = 1; i < myVertices.length; i++) { ////从1开始，去除A节点即源节点
         var toVertex = myVertices[i], //顶点数组得到toVertex
             path = new Stack(); //创建一个栈存储路径值
-        for (var v = toVertex; v !== fromVertex; v = shortestPathA.predecessors[v]) { //追溯toVertex到fromVertex的路径
+        for (var v = toVertex; v !== finalVertexPath; v = shortestPathA.predecessors[v]) { //追溯toVertex到finalVertexPath的路径
             path.push(v); //变量v添加到栈中
         }
-        path.push(fromVertex); //最后添加源顶点
+        path.push(finalVertexPath); //最后添加源顶点
         var s = path.pop(); //弹出源定点
         while (!path.isEmpty()) { 
             s += ' - ' + path.pop(); //栈中移出一个项并将其拼接到字符串s的后面

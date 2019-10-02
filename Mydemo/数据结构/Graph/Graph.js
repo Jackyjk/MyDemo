@@ -3,10 +3,10 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-09-29 12:34:00
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-09-29 12:46:32
+ * @LastEditTime: 2019-10-02 22:26:26
  */
 function Graph() {
-    var vertices = []; //存储图中所有顶点的名字}
+    var vertices = []; //存储图中所有顶点的名字
     var adjList = new Dictionary(); //使用字典存储邻接表
 
     //图中添加一个新的顶点
