@@ -1,0 +1,45 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-03 19:30:52
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-03 19:46:04
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Does my number look big in this?</title>
+</head>
+<script>
+    function narcissistic(value) {
+
+        var num_str = [];
+        num_str = value.toString();
+
+
+        // console.log(Number(num_str[num_str.length - 1]));
+        var final_number = num_str.length;
+        var sum = 0;
+        if(value<10) return true;
+        for (var j = 0; j < num_str.length; j++) {
+            // console.log(Number(num_str[j]));
+            sum += Math.pow(Number(num_str[j]), final_number);
+        }
+        return sum==value?true:false;
+    }
+
+    console.log(narcissistic(1634));
+    console.log(narcissistic(371));
+    console.log(narcissistic(370));
+    console.log(narcissistic(8208));
+</script>
+
+<body>
+
+</body>
+
+</html>
