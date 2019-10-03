@@ -1,0 +1,51 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-03 13:53:19
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-03 14:05:18
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!</title>
+</head>
+<script>
+    function sumDigPow(a, b) {
+        // Your code here
+        var arr = [a];
+        arr.length = b-a;
+        console.log(b);
+        for(var i=a+1;i<=b;i++){
+            arr[i] = i;
+        }
+        console.log(arr);
+
+    }
+
+    // function getRandomArray(a,b) {
+    //     var array = [];
+    //     while (array.length < b) {
+    //         var random = Math.floor(Math.random() * b) + 1;
+    //         if (array.indexOf(random) < 0) {
+    //             array.push(random);
+    //         }
+    //     }
+    //     return array.sort();
+    // }
+
+    // console.log(getRandomArray(1,10));
+    // console.log(getRandomArray(1,100));
+    sumDigPow(1,10);
+    sumDigPow(90,100);
+</script>
+
+<body>
+
+</body>
+
+</html>
