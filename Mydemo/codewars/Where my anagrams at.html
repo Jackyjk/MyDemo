@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-03 11:09:22
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-03 11:21:50
+ * @LastEditTime: 2019-10-03 11:25:23
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Where my anagrams at?</title>
+    <title>Where my anagrams at?  5kyu</title>
 </head>
 <script>
-    function anagrams(word, words) {
+    /*function anagrams(word, words) {
         var _word = [];
         var _words = [];
         var num = 0;
@@ -37,11 +37,15 @@
             return false;
         }
         // console.log(num);
+    }*/
+
+    function anagrams(word, words) {
+        return word.split("").sort().join("") === words.split("").sort().join("");
     }
 
-
-
-    anagrams('acbd', 'abcd');
+    console.log(anagrams('acbd', 'abcd'));
+    console.log(anagrams('abbaa', 'ababa'));
+    console.log(anagrams('aaab', 'aabb'));
 </script>
 
 <body>
