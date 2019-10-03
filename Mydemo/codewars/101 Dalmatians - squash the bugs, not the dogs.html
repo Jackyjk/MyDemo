@@ -1,0 +1,44 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-03 11:37:41
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-03 11:40:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>101 Dalmatians - squash the bugs, not the dogs!</title>
+</head>
+<script>
+    function howManyDalmatians(number) {
+        const dogs = [
+            'Hardly any',
+            'More than a handful!',
+            "Woah that's a lot of dogs!",
+            '101 DALMATIANS!!!',
+        ]
+        const respond =
+            number <= 10 ?
+            dogs[0] :
+            number <= 50 ? dogs[1] : number === 101 ? dogs[3] : dogs[2]
+        return respond
+    }
+
+    console.log(howManyDalmatians(26));
+    console.log(howManyDalmatians(8));
+    console.log(howManyDalmatians(14));
+    console.log(howManyDalmatians(100));
+    console.log(howManyDalmatians(80));
+    console.log(howManyDalmatians(101));
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-03 13:21:34
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-03 13:40:48
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weight of its Contents</title>
+</head>
+<script>
+    /*
+     * Takes a bottleWeight and scale of the bottle to its contents
+     * and returns the weight of its contents
+     * @param {int} bottleWeight:
+     *  The weight of the entire bottle and contents
+     * @param {string} scale:
+     *  A string comparing the weight of the bottle contents to the weight of the bottle by itself
+     * Acceptable values: ('2 times larger', '4 times larger', '50 times smaller') 
+     */
+    function contentWeight(bottleWeight, scale) {
+        var str = [];
+        str = scale;
+        console.log(str.split(' '));
+        var _str = [];
+        _str = str.split(' ');
+        if(_str[2] == 'larger'){
+            // console.log('larger');
+            // console.log(_str[0]);
+            // console.log(bottleWeight/(_str[0]+1));
+            // console.log(bottleWeight/3);
+            return (bottleWeight/(Number(_str[0])+1))*_str[0];
+        }else if(_str[2] == 'smaller'){
+            return (bottleWeight/(Number(_str[0])+1));
+        }
+    }
+
+    console.log(contentWeight(120, "2 times larger"));
+    console.log(contentWeight(120, "2 times smaller"));
+    console.log(contentWeight(120, "6 times larger"));
+    console.log(contentWeight(120, "15 times smaller"));
+</script>
+
+<body>
+
+</body>
+
+</html>

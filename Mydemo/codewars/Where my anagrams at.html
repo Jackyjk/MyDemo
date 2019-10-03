@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-03 11:09:22
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-03 11:25:23
+ * @LastEditTime: 2019-10-03 11:32:43
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +40,14 @@
     }*/
 
     function anagrams(word, words) {
-        return word.split("").sort().join("") === words.split("").sort().join("");
+        console.log((word.split("").sort().join("")) === (words.split("").sort().join("")));
     }
+    
 
-    console.log(anagrams('acbd', 'abcd'));
-    console.log(anagrams('abbaa', 'ababa'));
-    console.log(anagrams('aaab', 'aabb'));
+    anagrams('acbd', 'abcd');
+    anagrams('abbaa', 'ababa');
+    anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])
+    anagrams('aaab', 'aabb');
 </script>
 
 <body>
