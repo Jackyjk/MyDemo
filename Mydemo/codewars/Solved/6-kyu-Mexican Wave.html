@@ -1,0 +1,59 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-04 20:31:07
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-04 21:14:40
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mexican Wave</title>
+</head>
+<script>
+    /*function isalpha(str) {
+        var str1 = str.charCodeAt(0);
+        var str = parseInt(str1);
+        // console.log(str);
+        if (65 <= str && str <= 90) {
+            // console.log('Upper');
+            return 1;
+        } else if (97 <= str && str <= 122) {
+            // console.log('Lower');
+            return 2;
+        } else {
+            // console.log('Number');
+            return 0;
+        }
+    }
+
+
+    console.log(isalpha('a'));
+    console.log(isalpha('F'));
+    console.log(isalpha('1'));*/
+
+    function wave(string){
+        let waveArray = [];
+        for(let i=0;i<string.length;i++){
+            let letter = string[i];
+            if(letter === " "){
+                continue;
+            }else{
+                waveArray.push(string.slice(0,i) + letter.toUpperCase() + string.slice(i + 1));
+            }
+        }
+        return waveArray;
+    }
+
+    console.log(wave('hello'));
+</script>
+
+<body>
+
+</body>
+
+</html>
