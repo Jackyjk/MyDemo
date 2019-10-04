@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-04 20:31:07
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-04 21:14:40
+ * @LastEditTime: 2019-10-04 21:21:23
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,35 +15,45 @@
     <title>Mexican Wave</title>
 </head>
 <script>
-    /*function isalpha(str) {
-        var str1 = str.charCodeAt(0);
-        var str = parseInt(str1);
-        // console.log(str);
-        if (65 <= str && str <= 90) {
-            // console.log('Upper');
-            return 1;
-        } else if (97 <= str && str <= 122) {
-            // console.log('Lower');
-            return 2;
-        } else {
-            // console.log('Number');
-            return 0;
+    function wave() {
+        var s = arguments[0];
+        console.log(arguments[0]);
+        var arr = [];
+        for (var i = 0; i < s.length; i++) {
+            var n = '';
+            for (var j = 0; j < s.length; j++) {
+                if (j === i) {
+                    n += s[j].toUpperCase();
+                } else {
+                    n += s[j];
+                }
+            }
+            arr.push(n);
         }
+
+        var finishArr = [];
+        var ar1 = [];
+        for (var i = 0; i < arr.length; i++) {
+            var count = 0;
+            for (var j = 0; j < arr.length; j++) {
+                if (arr[i][j] === arr[i][j].toUpperCase() && arr[i][j] !== ' ')
+                    count++;
+            }
+            if (count === 1) {
+                ar1.push(arr[i]);
+            }
+        }
+        return ar1;
     }
 
-
-    console.log(isalpha('a'));
-    console.log(isalpha('F'));
-    console.log(isalpha('1'));*/
-
-    function wave(string){
+    function wave(string) {
         let waveArray = [];
-        for(let i=0;i<string.length;i++){
+        for (let i = 0; i < string.length; i++) {
             let letter = string[i];
-            if(letter === " "){
+            if (letter === " ") {
                 continue;
-            }else{
-                waveArray.push(string.slice(0,i) + letter.toUpperCase() + string.slice(i + 1));
+            } else {
+                waveArray.push(string.slice(0, i) + letter.toUpperCase() + string.slice(i + 1));
             }
         }
         return waveArray;
