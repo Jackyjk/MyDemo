@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-06 10:57:04
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-06 11:51:30
+ * @LastEditTime: 2019-10-06 12:03:41
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -99,16 +99,20 @@
         var results = [];
 
         while (array.length > 0) {
+            //使用shift返回当前数组中的第一个元素
+            // 使用concat方法连接被弹出的第一个元素，将其放在最后一位
             results = results.concat(array.shift());
-
+            //forEach方法进行数组的遍历
             array.forEach(function (current) {
+                //使用pop方法弹出最后一个元素，并进行在数组尾添加该元素
                 results.push(current.pop());
             });
 
             array.forEach(function (current) {
+                //reverse() 方法用于颠倒数组中元素的顺序
                 current.reverse();
             });
-
+            //再次用于颠倒数组中元素的顺序
             array.reverse();
         }
 
