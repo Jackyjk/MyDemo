@@ -1,0 +1,50 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-09 09:00:47
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-09 09:12:14
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Well of Ideas - Easy Version</title>
+</head>
+<script>
+    function well(x) {
+        var bad = 0,
+            good = 0;
+        for (var i = 0; i < x.length; i++) {
+            // console.log(x[i]);
+            if (x[i] == "bad") {
+                bad++;
+            } else {
+                good++;
+            }
+        }
+        // console.log(bad + ' ' + good);
+        if (bad == x.length) {
+            return 'Fail!';
+        } else if (good > 2) {
+            return 'I smell a series!';
+        } else {
+            return 'Publish!';
+        }
+    }
+
+    console.log(well(['bad', 'bad', 'bad']));
+    console.log(well(['good', 'bad', 'bad', 'bad', 'bad']));
+    console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']));
+    console.log(well(['bad', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']));
+    
+</script>
+
+<body>
+
+</body>
+
+</html>
