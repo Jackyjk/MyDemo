@@ -1,0 +1,48 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-09 20:17:08
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-09 20:32:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The First Non Repeated Character In A String</title>
+</head>
+<script>
+    /*
+    您需要编写一个函数，该函数返回给定字符串中的第一个非重复字符。
+
+    例如，对于字符串“test”函数应该返回“e”。
+
+    对于字符串“teeter”函数应该返回“r”。
+
+
+
+    如果一个字符串包含所有唯一字符(各字符的数量一样时)，那么只返回该字符串的第一个字符。
+    */
+    function firstNonRepeated(s) {
+        for (var i = 0; i < s.length; i++) {
+            var c = s.charAt(i);        
+            //该位置的字母只和该位置的字母相同，和其他位置的字母不同，返回-1
+            if (s.indexOf(c) == i && s.indexOf(c, i + 1) == -1) {
+                return c;
+            }
+        }
+        return s[0];
+    }
+
+    console.log(firstNonRepeated('test'));
+    console.log(firstNonRepeated('noqprmvtsutwlvkrsuwrmqlokpn'));
+</script>
+
+<body>
+
+</body>
+
+</html>
