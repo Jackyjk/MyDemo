@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-09 13:23:49
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-09 13:25:21
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Century From Year</title>
+</head>
+<script>
+    function century(year) {
+        // Finish this :)
+        var num;
+        num = year%100;
+        if(num == 0){
+            return parseInt(year/100);
+        }else{
+            return parseInt(year/100) + 1;
+        }
+        return;
+    }
+
+    console.log(century(1705));
+    console.log(century(1900));
+    console.log(century(2003));
+</script>
+
+<body>
+
+</body>
+
+</html>
