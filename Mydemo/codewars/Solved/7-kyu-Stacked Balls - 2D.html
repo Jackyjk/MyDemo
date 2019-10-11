@@ -1,0 +1,32 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-11 12:14:57
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-11 12:17:15
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stacked Balls - 2D</title>
+</head>
+<script>
+    function stackHeight2d(layers) {
+        // Your code here!
+        return !layers ? 0 : ((layers - 1) * Math.sqrt(3) / 2 + 1);
+    }
+    
+    console.log(stackHeight2d(0));
+    console.log(stackHeight2d(1));
+    console.log(stackHeight2d(2));
+</script>
+
+<body>
+
+</body>
+
+</html>

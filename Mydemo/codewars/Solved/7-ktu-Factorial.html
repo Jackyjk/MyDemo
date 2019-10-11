@@ -1,0 +1,43 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-11 15:46:10
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-11 15:58:21
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factorial</title>
+</head>
+<script>
+    function factorial(n) {
+        // Calculate the factorial here
+        var num = 1;
+        if (n < 0 || n > 12) {
+            throw new RangeError('Range must be between 0 and 12');
+        } else {
+            for (var i = 1; i <= n; i++) {
+                num *= i;
+            }
+        }
+        return num;
+    }
+
+    console.log(factorial(0));
+    console.log(factorial(1));
+    console.log(factorial(2));
+    console.log(factorial(3));
+    console.log(factorial(45));
+    console.log(factorial(12));
+</script>
+
+<body>
+
+</body>
+
+</html>
