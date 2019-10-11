@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-11 16:42:25
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-11 16:56:32
+ * @LastEditTime: 2019-10-11 16:59:18
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -40,18 +40,30 @@
         return true;
     }
 
+    /*
+        function isPrime(num) {
+            var prime = true;
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    prime = false;
+                }
+            }
+            return (num < 2) ? false : prime;
+        }
+    */
+
 /*
     function isPrime(num) {
-        var prime = true;
-        for (var i = 2; i < num; i++) {
+        if (num < 2) return false;
+        const limit = Math.sqrt(num);
+        for (let i = 2; i <= limit; ++i) {
             if (num % i === 0) {
-                prime = false;
+                return false;
             }
         }
-        return (num < 2) ? false : prime;
+        return true;
     }
 */
-
     console.log(isPrime(1));
     console.log(isPrime(-1));
     console.log(isPrime(-21));

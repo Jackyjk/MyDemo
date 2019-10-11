@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-08 17:11:42
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-08 17:29:01
+ * @LastEditTime: 2019-10-11 17:12:53
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,7 @@
     <title>Vasya - Clerk</title>
 </head>
 <script>
+    /*
     function tickets(peopleInLine) {
         // 初始化所拿金额的人数
         var tf = 0, //25
@@ -51,14 +52,35 @@
         }
         return 'NO';
     }
+*/
+    function tickets(peopleInLine) {
+        const hash = {
+            25: 0,
+            50: 0
+        }
+        for (let money of peopleInLine) {
+            if (money === 25) hash[25]++
+            if (money === 50) {
+                hash[50]++
+                hash[25]--
+            }
+            if (money === 100) {
+                if (hash[50] > 0) {
+                    hash[50]--
+                    hash[25]--
+                } else {
+                    hash[25] -= 3
+                }
+            }
+            if (hash[25] < 0 || hash[50] < 0) return 'NO'
+        }
+        return 'YES'
+    }
 
-
-    // console.log(tickets([25, 100]));
-    // console.log(tickets([25, 25, 50, 50]));
-    console.log(tickets([25,50,25,100,25,25,25,100,25,25,50,100,25,50,25,100,25,50,50,25]));
-    console.log(tickets([25,25,25,100,25,25,50,100,25,25,50,100,25,50,25,100,25,50,50,50]));
-    
-    
+    console.log(tickets([25, 100]));
+    console.log(tickets([25, 25, 50, 50]));
+    console.log(tickets([25, 50, 25, 100, 25, 25, 25, 100, 25, 25, 50, 100, 25, 50, 25, 100, 25, 50, 50, 25]));
+    console.log(tickets([25, 25, 25, 100, 25, 25, 50, 100, 25, 25, 50, 100, 25, 50, 25, 100, 25, 50, 50, 50]));
 </script>
 
 <body>
