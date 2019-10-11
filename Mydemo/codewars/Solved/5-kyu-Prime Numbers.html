@@ -1,0 +1,75 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-11 16:00:35
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-11 16:56:46
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prime Numbers</title>
+</head>
+<script>
+    function isPrime(num) {
+        var prime = true;
+        for (var i = 2; i < num; i++) {
+            if (num % i === 0) {
+                prime = false;
+            }
+        }
+        return (num < 2) ? false : prime;
+    }
+
+    function getPrimes(start, finish) {
+        // ...
+        var arr_prime = [];
+        var count = 0;
+        if (finish > start) {
+            for (var i = start; i <= Math.abs(finish - start); i++) {
+                if (isPrime(i)) {
+                    arr_prime[i] = i;
+                    count++;
+                }
+            }
+        } else if (start > finish) {
+            for (var i = finish; i <= Math.abs(finish - start); i++) {
+                if (isPrime(i)) {
+                    arr_prime[i] = i;
+                    count++;
+                }
+            }
+        }
+
+
+        //去除数组中的空值
+        for (var i = 0; i < arr_prime.length; i++) {
+            if (arr_prime[i] == "" || typeof (arr_prime[i]) == "undefined") {
+                arr_prime.splice(i, 1);
+                i = i - 1;
+            }
+
+        }
+        return arr_prime;
+    }
+
+    console.log(isPrime(2));
+    console.log(isPrime(3));
+    console.log(isPrime(4));
+    console.log(isPrime(3889));
+    console.log(isPrime(293));
+    console.log(isPrime(317));
+    console.log(getPrimes(0, 0).join());
+    console.log(getPrimes(0, 30).join());
+    console.log(getPrimes(30, 0).join());
+</script>
+
+<body>
+
+</body>
+
+</html>
