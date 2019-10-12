@@ -1,0 +1,46 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-12 19:09:03
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-12 19:13:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objectify a URL Query String</title>
+</head>
+<script>
+    function convertQueryToMap(query) {
+        // add your code here
+        let res = {};
+        query = query.split('&');           //& 进行分割
+        for (let i = 0; i < query.length; i++) {
+            let item = query[i].split('=');           //= 进行分割
+            let keys = item[0].split('.');           //. 进行分割
+            let temp = res;
+            for (let j = 0; j < keys.length; j++) {
+                if (j == keys.length - 1)
+                    temp[keys[j]] = typeof item[1] == "string" ? decodeURIComponent(item[1]) : item[1];
+                else {
+                    if (!(keys[j] in temp))
+                        temp[keys[j]] = {};
+                    temp = temp[keys[j]];
+                }
+            }
+        }
+        return res;
+    }
+    console.log(convertQueryToMap(
+        'user.name.firstname = Bob & user.name.lastname = Smith & user.favoritecolor = Light % 20 Blue'));
+</script>
+
+<body>
+
+</body>
+
+</html>
