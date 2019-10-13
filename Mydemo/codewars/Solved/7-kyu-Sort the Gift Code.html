@@ -1,0 +1,40 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-13 12:02:40
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-13 12:07:58
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort the Gift Code</title>
+</head>
+<script>
+    function sortGiftCode(code) {
+        //TODO 
+        var str = [];
+        for (var i = 0; i < code.length; i++) {
+            str[i] = code[i];
+        }
+        return str.sort().join('');
+    }
+
+
+    function sortGiftCode(code) {
+        return code.split('').sort().join('');
+    }
+
+    
+    console.log(sortGiftCode('abcdef'));
+</script>
+
+<body>
+
+</body>
+
+</html>
