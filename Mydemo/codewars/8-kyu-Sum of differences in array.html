@@ -1,0 +1,42 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-13 14:34:38
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-13 15:08:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sum of differences in array</title>
+</head>
+<script>
+    function sumOfDifferences(arr) {
+
+        //降序排列
+        var array = arr.sort(function(a, b){return a - b}).reverse();
+        //循环计算总和
+        console.log(array);
+        var sum = 0;
+        for (var i = 0; i < array.length-1 ; i++) {
+            sum += (array[i] - array[i + 1])
+        }
+        return sum;
+    }
+
+    console.log(sumOfDifferences([-3, -2, -1]));
+    console.log(sumOfDifferences([1, 2, 10]));
+    console.log(sumOfDifferences([10,10,14,1,-1,-3,-1,-20,6,-12,-3,-19,-12,-10,5,-3,2,18,11,-19,6,-18,-14,19,-19,11]));
+    console.log(sumOfDifferences([0,10,-8,9,8,-8,-6,11,-4,-8,-4,2,-9,-10,-1,5,9,-5,9,-7,4,-2,4,1,-4,-6,-8]));
+    
+</script>
+
+<body>
+
+</body>
+
+</html>

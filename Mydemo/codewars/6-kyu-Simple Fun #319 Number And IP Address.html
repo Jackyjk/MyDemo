@@ -1,0 +1,49 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-13 14:09:11
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-13 14:17:31
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DocSimple Fun #319: Number And IP Addressument</title>
+</head>
+<script>
+    function numberAndIPaddress(s) {
+        //coding and coding..
+        if(s.indexOf('.')){
+            return ipToNum(s);
+        }else{
+            return numToIp(s);
+        }
+
+    }
+
+    function ipToNum(ip) {
+        var parts = ip.split(".");
+        var sum = 0;
+        sum = sum + parseInt(parts[0]) * 256 * 256 * 256;
+        sum = sum + parseInt(parts[1]) * 256 * 256;
+        sum = sum + parseInt(parts[2]) * 256;
+        sum = sum + parseInt(parts[3]);
+        return String(sum);
+    }
+
+    function numToIp(s) {
+        return num.toString(2).padStart(32, '0').match(/[01]{8}/g).map(x => parseInt(x, 2)).join('.');
+    }
+    console.log(numberAndIPaddress("10.0.3.193"));
+    console.log(numberAndIPaddress("167773121"));
+</script>
+
+<body>
+
+</body>
+
+</html>

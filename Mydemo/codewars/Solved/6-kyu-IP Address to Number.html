@@ -1,0 +1,66 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-13 12:28:09
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-13 14:08:14
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IP Address to Number</title>
+</head>
+<script>
+    function ipToNum(ip) {
+        /*var ip_str = ip.split('.');
+         
+         var num = 0;
+         var arr =[];
+         for(var i=0;i<ip_str.length;i++){
+             arr[i] = parseInt(ip_str[i]).toString(2);
+         }
+         for(var i=0;i<arr.length;i++){
+             num += arr[i].toString(10);
+         }
+         console.log(parseInt(num,2));
+         return arr;*/
+        return parseInt(ip.split `.`.map(v => (v * 1).toString(2).padStart(8, 0)).join ``, 2);
+    }
+
+    function ipToNum(ip) {
+        var parts = ip.split(".");
+        var sum = 0;
+        sum = sum + parseInt(parts[0]) * 256 * 256 * 256;
+        sum = sum + parseInt(parts[1]) * 256 * 256;
+        sum = sum + parseInt(parts[2]) * 256;
+        sum = sum + parseInt(parts[3]);
+        return sum;
+    }
+
+    // function numToIp(num) {
+    //     var ip = num.toString(2);
+    //     var re = /(^(\d{8}){4}$)/;
+    //     return re.replace(re, '');
+    // }
+
+    function numToIp(number) {
+        var ip = number % 256;
+        for (var i = 1; i <= 3; i++) {
+            number = Math.floor(number / 256);
+            ip = number % 256 + '.' + ip;
+        }
+        return ip; // As string
+    }
+    console.log(ipToNum('192.168.1.1'));
+    console.log(numToIp(3232235777));
+</script>
+
+<body>
+
+</body>
+
+</html>
