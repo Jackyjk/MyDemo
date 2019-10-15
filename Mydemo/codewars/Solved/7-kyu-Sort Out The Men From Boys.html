@@ -1,0 +1,60 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-15 17:37:29
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-15 18:07:02
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort Out The Men From Boys</title>
+</head>
+<script>
+    // function menFromBoys(arr) {
+    //     //your code here
+    //     var odd_num = [];
+    //     var even_num = [];
+
+    //     for (var i = 0; i < arr.length; i++) {
+    //         if (arr[i] % 2 == 0) {
+    //             even_num[i] = arr[i];
+    //         } else {
+    //             odd_num[i] = arr[i];
+    //         }
+    //     }
+    //     var odd_arr = odd_num.splice('').join();
+    //     var even_arr = even_num.splice('').join();
+    //     console.log(odd_arr);
+
+    //     var final_num = [];
+    //     for (var i = 0; i < even_num.length; i++) {
+    //         final_num[i] = even_num[i];
+    //     }
+
+    //     for (var i = even_num.length; i < (even_num.length + odd_num.length); i++) {
+    //         final_num[i] = odd_num[i];
+    //     }
+
+    //     return final_num;
+    // }
+
+    function menFromBoys(arr) {
+        return [...new Set(arr.filter(v => v % 2 === 0).sort((a, b) => a - b).concat(arr.filter(v => v % 2 !== 0).sort((
+            a, b) => b - a)))]
+    }
+
+
+    console.log(menFromBoys([7, 3, 14, 17])); //14,17,7,3
+    // console.log(filter_array([1, 2, '', 32]));
+</script>
+
+<body>
+
+</body>
+
+</html>
