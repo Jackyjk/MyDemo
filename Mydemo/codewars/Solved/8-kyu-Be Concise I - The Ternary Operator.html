@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-16 21:22:40
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-16 21:33:20
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Be Concise I - The Ternary Operator</title>
+</head>
+<script>
+    // TODO: Refactor and shorten the function
+
+    const describeAge = age =>
+        `You're a(n) ${
+    age <= 12 ? 'kid' : age <= 17 ? 'teenager' : age <= 64 ? 'adult' : 'elderly'
+  }`
+
+
+    console.log(describeAge(19));
+</script>
+
+<body>
+
+</body>
+
+</html>
