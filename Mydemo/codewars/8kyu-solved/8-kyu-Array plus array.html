@@ -1,0 +1,37 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-18 16:24:23
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-18 16:25:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array plus array
+    </title>
+</head>
+<script>
+    function arrayPlusArray(arr1, arr2) {
+        let sum = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+        }
+        for (let i = 0; i < arr1.length; i++) {
+            sum += arr2[i];
+        }
+        return sum;
+    }
+
+    console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-18 14:47:52
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-18 14:59:31
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find numbers which are divisible by given number</title>
+</head>
+<script>
+    function divisibleBy(numbers, divisor) {
+        var final_arr = [];
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % divisor == 0) {
+                final_arr[i] = numbers[i];
+            }
+        }
+        return deleteArraySpace(final_arr);
+    }
+
+    function deleteArraySpace(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == null) {
+                arr.splice(i, 1);
+                i = i - 1;
+            }
+        };
+        return arr;
+    }
+
+    console.log(divisibleBy([1, 2, 3, 4, 5, 6], 2));
+</script>
+
+<body>
+
+</body>
+
+</html>

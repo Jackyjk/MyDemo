@@ -1,0 +1,30 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-18 15:49:58
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-18 15:52:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filter out the geese</title>
+</head>
+<script>
+    function gooseFilter(birds) {
+        var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+        return birds.filter(b => !geese.includes(b));
+    };
+
+    console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+</script>
+
+<body>
+
+</body>
+
+</html>

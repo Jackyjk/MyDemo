@@ -1,0 +1,34 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-18 16:22:17
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-18 16:23:13
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Count by X</title>
+</head>
+<script>
+    function countBy(x, n) {
+        var z = [];
+        for (let i = 1; i <= n * x; i++)
+            if (i % x === 0) z.push(i)
+        return z;
+    }
+
+    console.log(countBy(1, 5));
+    console.log(countBy(2, 5));
+    console.log(countBy(3, 20));
+</script>
+
+<body>
+
+</body>
+
+</html>
