@@ -1,0 +1,37 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-18 16:44:18
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-18 16:46:02
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get the mean of an array</title>
+</head>
+<script>
+    function getAverage(marks) {
+        //TODO : calculate the downwar rounded average of the marks array
+        let sum = 0;
+        for (let i = 0; i < marks.length; i++) {
+            sum += marks[i];
+        }
+        let aver  = sum / marks.length;
+        return parseInt(aver);
+    }
+
+    console.log(getAverage([2,2,2,2]));
+    console.log(getAverage([1,2,3,4,5]));
+    console.log(getAverage([1,2,1,1,1,1,2]));
+</script>
+
+<body>
+
+</body>
+
+</html>
