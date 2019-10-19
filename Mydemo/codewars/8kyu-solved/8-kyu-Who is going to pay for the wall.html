@@ -1,9 +1,9 @@
 <!--
  * @fileheader.Author: Mr.J
  * @fileheader.LastModifiedBy: Mr.J
- * @Date: 2019-10-18 16:13:17
+ * @Date: 2019-10-19 12:43:42
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-18 16:13:17
+ * @LastEditTime: 2019-10-19 12:46:18
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>get ascii value of character</title>
+    <title>Who is going to pay for the wall?</title>
 </head>
 <script>
-    function getASCII(c) {
-        // ...
-        return c.charCodeAt(0);
+    function whoIsPaying(name) {
+        return name.length <= 2 ? [name] : [name, name.substr(0, 2)];
     }
+
+    console.log(whoIsPaying("Mexico"));
+    console.log(whoIsPaying(""));
+    console.log(whoIsPaying("M"));
 </script>
 
 <body>

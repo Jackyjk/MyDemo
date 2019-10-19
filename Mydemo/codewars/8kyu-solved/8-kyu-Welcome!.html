@@ -1,0 +1,48 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-19 12:47:20
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-19 12:48:04
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome!</title>
+</head>
+<script>
+    function greet(language) {
+        const base = {
+            english: 'Welcome',
+            czech: 'Vitejte',
+            danish: 'Velkomst',
+            dutch: 'Welkom',
+            estonian: 'Tere tulemast',
+            finnish: 'Tervetuloa',
+            flemish: 'Welgekomen',
+            french: 'Bienvenue',
+            german: 'Willkommen',
+            irish: 'Failte',
+            italian: 'Benvenuto',
+            latvian: 'Gaidits',
+            lithuanian: 'Laukiamas',
+            polish: 'Witamy',
+            spanish: 'Bienvenido',
+            swedish: 'Valkommen',
+            welsh: 'Croeso'
+        }
+        return base[language] || base.english;
+    }
+
+    console.log(greet('english'));
+</script>
+
+<body>
+
+</body>
+
+</html>

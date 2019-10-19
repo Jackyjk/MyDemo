@@ -1,0 +1,30 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-19 11:45:32
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-19 11:46:54
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>altERnaTIng cAsE -> ALTerNAtiNG CaSe</title>
+</head>
+<script>
+    String.prototype.toAlternatingCase = function () {
+        // Define your method here :)
+        return this.split("").map(a => a === a.toUpperCase() ? a.toLowerCase() : a.toUpperCase()).join('');
+    }
+
+    console.log("hello WORLD".toAlternatingCase());
+</script>
+
+<body>
+
+</body>
+
+</html>
