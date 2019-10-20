@@ -1,0 +1,31 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-20 15:21:05
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-20 15:22:06
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generate range of integers</title>
+</head>
+<script>
+    function generateRange(min, max, step) {
+        let result = [];
+        for (let i = min; i <= max; i += step) result.push(i);
+        return result;
+    }
+
+    console.log(generateRange(2, 10, 20));
+</script>
+
+<body>
+
+</body>
+
+</html>

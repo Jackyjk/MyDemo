@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-20 15:46:47
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-20 15:54:47
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's up next?</title>
+</head>
+<script>
+    function nextItem(xs, item) {
+        let flag = false;
+        let finalValue;
+
+        for (const i of xs) {
+            if (flag) {
+                finalValue = i;
+                break
+            }
+            if (i === item) flag = true;
+        }
+        return finalValue;
+    }
+
+    console.log(nextItem([1, 2, 3, 4, 5, 6, 7, 8], 5));
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-20 14:22:14
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-20 14:28:30
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Is the date today</title>
+</head>
+<script>
+    function isToday(date) {
+        return new Date().toDateString() === date.toDateString()
+    }
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    var yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    var today = new Date();
+    today.setDate(today.getDate());
+
+    console.log(isToday(tomorrow));
+    console.log(isToday(today));
+    console.log(isToday(yesterday));
+</script>
+
+<body>
+
+</body>
+
+</html>
