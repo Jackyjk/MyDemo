@@ -1,0 +1,38 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-22 19:32:21
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-22 20:04:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enumerable Magic #25 - Take the First N Elements</title>
+</head>
+<script>
+    function take(arr, n) {
+        // Your code here
+        let new_arr = [];
+        for (let i = 0; i < n; i++) {
+            new_arr[i] = arr[i]
+        }
+        if (arr.length > 0 && n <= arr.length) {
+            return new_arr;
+        } else if (n > arr.length) {
+            return arr;
+        }
+    }
+
+    console.log(take([0, 1, 2, 3, 5, 8, 13], 3));
+</script>
+
+<body>
+
+</body>
+
+</html>

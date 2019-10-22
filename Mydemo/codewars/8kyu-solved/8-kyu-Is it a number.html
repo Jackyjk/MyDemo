@@ -1,0 +1,35 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-22 20:08:30
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-22 20:17:39
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Is it a number?</title>
+</head>
+<script>
+    function isDigit(s) {
+        //your code
+        return s == parseFloat(s);
+    }
+
+    console.log(isDigit("123"));
+    console.log(isDigit("s123"));
+    console.log(isDigit("-123"));
+    console.log(isDigit("12-123"));
+    console.log(isDigit(" 3"));
+    console.log(isDigit("-123  56"));
+</script>
+
+<body>
+
+</body>
+
+</html>
