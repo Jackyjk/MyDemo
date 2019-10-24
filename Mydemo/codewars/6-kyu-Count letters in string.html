@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-11 21:58:46
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-11 22:38:43
+ * @LastEditTime: 2019-10-24 22:38:33
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -104,7 +104,32 @@
     }
 */
 
-    
+    function letterCount(s) {
+        return s.split ``.reduce((a, b) => (a[b] = a[b] + 1 || 1, a), {})
+    }
+
+    function letterCount(s) {
+        //your code here 
+        const result = {};
+
+        for (let i = 0; i < s.length; i++) {
+            result[s[i]] = (result[s[i]] || 0) + 1;
+        }
+
+        return result
+    }
+
+    function letterCount(s) {
+        let final_arr = {}
+        for (let letter of s) {
+            if (final_arr[letter]) {
+                final_arr[letter] += 1 // 再次出现同样字符，加一
+            } else {
+                final_arr[letter] = 1 // 第一次出现
+            }
+        }
+        return final_arr
+    }
 
 
     console.log(letterCount("codewars"));
