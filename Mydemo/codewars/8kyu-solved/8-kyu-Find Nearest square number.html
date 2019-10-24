@@ -1,0 +1,35 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-24 16:58:10
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-24 22:04:11
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Nearest square number</title>
+</head>
+<script>
+    /*Your task is to find the nearest square number, nearest_sq(n), of a positive integer n.*/
+    const nearestSq = n => {
+        return Math.round(n ** 0.5) ** 2
+    }
+
+    console.log(nearestSq(1));
+    console.log(nearestSq(2));
+    /*Math.round(2**0.5)  == 1*/
+    console.log(nearestSq(111));
+    /*Math.round(111**0.5)  == 11*/
+    console.log(nearestSq(9999));
+</script>
+
+<body>
+
+</body>
+
+</html>
