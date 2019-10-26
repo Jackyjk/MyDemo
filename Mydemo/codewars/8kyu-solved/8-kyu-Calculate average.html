@@ -1,0 +1,40 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-26 14:05:02
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-26 14:07:54
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculate average</title>
+</head>
+<script>
+    /*
+    Write function avg which calculates average of numbers in given list.
+    */
+
+    function find_average(array) {
+        // your code here
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum / array.length;
+    }
+
+    function find_average(array) {
+        return array.reduce((result, current) => result + current, 0) / array.length;
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

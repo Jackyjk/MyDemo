@@ -1,0 +1,38 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-26 14:00:48
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-26 14:03:13
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parse nice int from char problem</title>
+</head>
+<script>
+    /*
+    Ask a small girl - "How old are you?". She always says strange things... Lets help her!
+
+    For correct answer program should return int from 0 to 9.
+
+    Assume test input string always valid and may look like "1 year old" or "5 years old", etc.. The first char is number only.
+    */
+
+    function getAge(inputString) {
+        // return correct age (int). Happy coding :) 
+        return Number(inputString.split(' ')[0]);
+    }
+
+    console.log(getAge("4 years old"));
+</script>
+
+<body>
+
+</body>
+
+</html>

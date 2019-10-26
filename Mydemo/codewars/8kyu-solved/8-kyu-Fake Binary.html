@@ -1,0 +1,45 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-26 13:42:29
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-26 13:45:53
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fake Binary</title>
+</head>
+<script>
+    /*
+    Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. 
+    Return the resulting string.
+    */
+    function fakeBin(x) {
+        let x_str = x.split('');
+        for (let i = 0; i < x.length; i++) {
+            if (x_str[i] < 5) {
+                x_str[i] = 0;
+            } else {
+                x_str[i] = 1;
+            }
+        }
+        return x_str.join('');
+    }
+
+    function fakeBin(x) {
+        return x.split('').map(n => n < 5 ? 0 : 1).join('');
+    }
+
+    console.log(fakeBin('45385593107843568'));
+</script>
+
+<body>
+
+</body>
+
+</html>
