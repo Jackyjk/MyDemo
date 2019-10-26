@@ -1,0 +1,36 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-26 14:21:09
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-26 14:58:12
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sum of Multiples</title>
+</head>
+<script>
+    function sumMul(n, m) {
+        if (n >= m) return "INVALID";
+
+        let sum = 0;
+        for (var i = n; i < m; i += n) {
+            sum += i;
+        }
+        return sum;
+    }
+    console.log(sumMul(2, 9));
+    console.log(sumMul(2, -9));
+    console.log(sumMul(0, 0));
+</script>
+
+<body>
+
+</body>
+
+</html>
