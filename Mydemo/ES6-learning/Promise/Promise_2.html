@@ -1,0 +1,35 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-27 21:33:11
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-27 21:47:14
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise Intro</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+<body>
+    <script>
+        const usersPromise = axios.get('https://api.github.com/users'); //返回一个Promise
+
+        //监听user Promise的事件，返回请求的值
+        usersPromise.then(reponse => {
+            username = reponse.data[0].login;
+            return axios.get(`https://api.github.com/users/${username}/repos`);
+        }).then(reponse => {
+            console.log(reponse.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-21 23:19:13
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-21 23:54:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>all_loop</title>
+</head>
+<script>
+    Array.prototype.first = function(){
+        return this[0];
+    }
+    let arr = [1, 2, 3, 4, 5];
+    // arr.source = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+    console.log('---------------------------');
+
+    //Array.forEach  
+    arr.forEach(function (element) {
+        console.log(element);
+    });
+    console.log('simple');
+    arr.forEach(element => {
+        // if (element == 2) {
+        //     //不能跳过或者终止
+        //     break;
+        //     // continue;
+        // }
+        console.log(element);
+    })
+    console.log('---------------------------');
+
+    //for...in 循环遍历 可枚举属性  原型上的方法一样
+for (let index in arr) {
+    //索引值输出
+    console.log(index);
+}
+    console.log('---------------------------');
+
+    for (let index in arr) {
+        console.log(arr[index]);
+    }
+    console.log('---------------------------');
+
+    //语法简单  循环的值是属性值 不会遍历非数字属性  可以终止跳过
+    for (const element of arr) {
+        if (element == 2) {
+            //可以跳过或者终止
+            break;
+            // continue;
+        }
+        console.log(element);
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

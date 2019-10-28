@@ -1,0 +1,48 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-10-27 22:24:32
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-10-27 22:32:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>More Promise</title>
+</head>
+
+<body>
+    <script>
+const usersPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(['jack1', 'jack2', 'jack3']);
+    }, 3000);
+});
+
+const moviePromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve({
+            name: '战狼2',
+            rating: 9.8,
+            year: 2018
+        });
+    }, 1500);
+});
+
+Promise.
+race([usersPromise, moviePromise])
+    .then(reponses => {
+        console.log(reponses);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    </script>
+
+</body>
+
+</html>
