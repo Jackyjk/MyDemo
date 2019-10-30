@@ -3,7 +3,7 @@
  * @fileheader.LastModifiedBy: Mr.J
  * @Date: 2019-10-30 22:11:41
  * @LastEditors: Mr.J
- * @LastEditTime: 2019-10-30 22:13:49
+ * @LastEditTime: 2019-10-30 22:26:15
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +16,11 @@
 </head>
 <script>
     function sc(floor) {
-        return;
+        if (floor <= 1) return "";
+
+        return 'Aa~ '.repeat(floor - 1) + 'Pa!' + (floor <= 6 ? ' Aa!' : '');
     }
-    console.log(object);
+    console.log(sc(2));
 </script>
 
 <body>
