@@ -1,0 +1,44 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 15:36:01
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 15:37:26
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pirates!! Are the Cannons ready!??</title>
+</head>
+
+<body>
+    <script>
+        const cannonsReady = (gunners) => {
+            return Object.values(gunners).every(response => response === 'aye') ?
+                'Fire!' :
+                'Shiver me timbers!'
+        }
+
+        var a = {
+                'Mike': 'aye',
+                'Joe': 'aye',
+                'Johnson': 'aye',
+                'Peter': 'aye'
+            },
+            b = {
+                'Mike': 'aye',
+                'Joe': 'nay',
+                'Johnson': 'aye',
+                'Peter': 'aye'
+            };
+
+        console.log(cannonsReady(a));
+        console.log(cannonsReady(b));
+    </script>
+</body>
+
+</html>

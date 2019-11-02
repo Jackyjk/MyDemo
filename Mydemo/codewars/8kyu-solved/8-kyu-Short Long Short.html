@@ -1,0 +1,30 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 15:56:39
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 15:58:39
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Short Long Short</title>
+</head>
+
+<body>
+    <script>
+        function solution(a, b) {
+            // your code here
+            return a.length > b.length?`${b}${a}${b}`:`${a}${b}${a}`;
+        }
+        console.log(solution('45', '1'));
+        console.log(solution('Soon', 'Me'));
+        console.log(solution('13', '200'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 15:29:00
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 15:35:19
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NBA full 48 minutes average</title>
+</head>
+
+<body>
+    <script>
+        const pointsPer48 = (ppg, mpg) => {
+            return mpg ? Number((ppg / mpg * 48).toFixed(1)) : 0;
+        }
+
+        console.log(pointsPer48(12, 20));
+        console.log(pointsPer48(12, 12));
+    </script>
+</body>
+
+</html>

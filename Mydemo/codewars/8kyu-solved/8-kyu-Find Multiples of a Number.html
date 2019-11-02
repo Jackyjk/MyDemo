@@ -1,0 +1,35 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 15:50:52
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 15:55:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Multiples of a Number</title>
+</head>
+
+<body>
+    <script>
+        function findMultiples(integer, limit) {
+            //your code here
+            let arr = [];
+            for (let i = integer; i <= limit; i++) {
+                if (i % integer == 0){
+                    arr.push(i);
+                }
+            }
+            return arr;
+        }
+        console.log(findMultiples(5,25));
+        console.log(findMultiples(4,27));
+    </script>
+</body>
+
+</html>

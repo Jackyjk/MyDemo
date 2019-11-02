@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 09:20:52
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 09:35:20
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beginner Series #3 Sum of Numbers</title>
+</head>
+
+<body>
+    <script>
+        function getSum(a, b) {
+            let min = Math.min(a, b),
+                max = Math.max(a, b);
+            return (max - min + 1) * (min + max) / 2;
+        }
+
+        console.log(getSum(1, 1));
+        console.log(getSum(1, 3));
+        console.log(getSum(-1, 2));
+        console.log(getSum(109, -177));
+    </script>
+</body>
+
+</html>
