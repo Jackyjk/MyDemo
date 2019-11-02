@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors!</title>
+</head>
+<body>
+    <script>
+    const rps = (p1, p2) => {
+if (p1==='scissors'&&p2==='paper') return `Player 1 won!`;
+if (p1==='paper'&&p2==='rock') return `Player 1 won!`;
+if (p1==='rock'&&p2==='scissors') return `Player 1 won!`;
+if (p1==='paper'&&p2==='scissors') return `Player 2 won!`;
+if (p1==='rock'&&p2==='paper') return `Player 2 won!`;
+if (p1==='scissors'&&p2==='rock') return `Player 2 won!`;
+if (p1==='scissors'&&p2==='scissors') return `Draw!`;
+if (p1==='paper'&&p2==='paper') return `Draw!`;
+if (p1==='rock'&&p2==='rock') return `Draw!`;
+};
+    </script>
+</body>
+</html>

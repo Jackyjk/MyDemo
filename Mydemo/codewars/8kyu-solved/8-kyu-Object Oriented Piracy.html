@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 16:34:16
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 16:34:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Oriented Piracy</title>
+</head>
+
+<body>
+    <script>
+        class Ship {
+            constructor(draft, crew) {
+                this.draft = draft;
+                this.crew = crew;
+            }
+
+            isWorthIt() {
+                return this.draft - 1.5 * this.crew > 20;
+            }
+        }
+    </script>
+</body>
+
+</html>

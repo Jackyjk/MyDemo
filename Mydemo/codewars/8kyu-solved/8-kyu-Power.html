@@ -1,0 +1,34 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 16:49:25
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 16:50:06
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Power</title>
+</head>
+
+<body>
+    <script>
+        function numberToPower(number, power) {
+            let result = 1;
+            for (let i = 1; i <= power; i++) {
+                result *= number
+            }
+            return result
+        }
+
+        console.log(numberToPower(4, 2));
+        console.log(numberToPower(10, 4));
+        console.log(numberToPower(10, 0));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 16:14:41
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 16:15:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Training JS #32: methods of Math---round() ceil() and floor()</title>
+</head>
+
+<body>
+    <script>
+        function roundIt(n) {
+
+            let [left, right] = n.toString().split('.').map(x => x.length),
+                dx = left - right,
+                fn = dx < 0 ? Math.ceil : dx > 0 ? Math.floor : Math.round
+
+            return fn(n)
+        }
+
+        console.log(roundIt(34.56));
+    </script>
+</body>
+
+</html>

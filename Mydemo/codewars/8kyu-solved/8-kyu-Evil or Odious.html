@@ -1,0 +1,26 @@
+<!--
+ * @fileheader.Author: Mr.J
+ * @fileheader.LastModifiedBy: Mr.J
+ * @Date: 2019-11-02 16:48:26
+ * @LastEditors: Mr.J
+ * @LastEditTime: 2019-11-02 16:48:59
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evil or Odious</title>
+</head>
+
+<body>
+    <script>
+        function evil(n) {
+            return n.toString(2).match(/1/g).length % 2 ? "It's Odious!" : "It's Evil!"
+        }
+    </script>
+</body>
+
+</html>
