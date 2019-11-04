@@ -4,17 +4,6 @@
 
 <strong>Go it live up ！！！</strong>
 
-# Codewars-My_solutions
-![](https://www.codewars.com/users/Jackyjk/badges/large) 
-## Codewars-5kyu-solutions
-[Click here to get the solutions](https://github.com/Jackyjk/MyDemo/tree/master/Mydemo/codewars/5kyu-solved)
-## Codewars-6kyu-solutions
-[Click here to get the solutions](https://github.com/Jackyjk/MyDemo/tree/master/Mydemo/codewars/6kyu-solved)
-## Codewars-7kyu-solutions
-[Click here to get the solutions](https://github.com/Jackyjk/MyDemo/tree/master/Mydemo/codewars/7kyu-solved)
-## Codewars-8kyu-solutions
-[Click here to get the solutions](https://github.com/Jackyjk/MyDemo/tree/master/Mydemo/codewars/8kyu-solved)
-
 # 俄罗斯方块
     Tetris (Russian: Тетрис), the basic rule is to move, rotate and put the game automatically output various diamonds, make it into a complete one or more lines and eliminate scores.
 [Click here to look source code](https://github.com/Jackyjk/MyDemo/tree/master/Mydemo/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97)
